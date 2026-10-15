@@ -22,12 +22,31 @@ export function useChat(provider: ProviderConfig | null) {
   const [tools, setTools] = useState<{ name: string; state: string }[]>([]);
   const abortRef = useRef<AbortController | null>(null);
 
+  // A synchronous mirror of `messages`. Callbacks need to read the current
+  // transcript and start a request in the same tick, which a state updater
+  // cannot do safely because updaters must stay free of side effects.
+  const messagesRef = useRef<ChatMessage[]>([]);
+  const setTranscript = useCallback(
+    (next: ChatMessage[] | ((prev: ChatMessage[]) => ChatMessage[])) => {
+      const value =
+        typeof next === "function" ? next(messagesRef.current) : next;
+      messagesRef.current = value;
+      setMessages(value);
+    },
+    [],
+  );
+
   const isBusy = status !== "idle";
+
+  // `send` and `retry` must see the live busy state, not the value captured
+  // when the callback was created.
+  const busyRef = useRef(false);
+  busyRef.current = isBusy;
 
   const run = useCallback(
     async (history: ChatMessage[]) => {
       if (!provider) {
-        setMessages((m) => [
+        setTranscript((m) => [
           ...m,
           {
             id: nextId(),
@@ -46,13 +65,13 @@ export function useChat(provider: ProviderConfig | null) {
       setTools([]);
 
       const assistantId = nextId();
-      setMessages((m) => [
+      setTranscript((m) => [
         ...m,
         { id: assistantId, role: "assistant", content: "" },
       ]);
 
       const patch = (fn: (msg: ChatMessage) => ChatMessage) =>
-        setMessages((m) => m.map((x) => (x.id === assistantId ? fn(x) : x)));
+        setTranscript((m) => m.map((x) => (x.id === assistantId ? fn(x) : x)));
 
       try {
         const res = await fetch(`${API_BASE}/api/chat`, {
@@ -90,8 +109,26 @@ export function useChat(provider: ProviderConfig | null) {
         const decoder = new TextDecoder();
         let buffer = "";
 
+        // Resolves when the teacher presses Stop, so a pending read never
+        // keeps the loop alive after cancellation.
+        const aborted = new Promise<"aborted">((resolve) => {
+          if (controller.signal.aborted) resolve("aborted");
+          else
+            controller.signal.addEventListener(
+              "abort",
+              () => resolve("aborted"),
+              { once: true },
+            );
+        });
+
         while (true) {
-          const { done, value } = await reader.read();
+          const next = await Promise.race([reader.read(), aborted]);
+          if (next === "aborted") {
+            await reader.cancel().catch(() => {});
+            break;
+          }
+
+          const { done, value } = next;
           if (done) break;
 
           buffer += decoder.decode(value, { stream: true });
@@ -164,44 +201,40 @@ export function useChat(provider: ProviderConfig | null) {
         abortRef.current = null;
         setStatus("idle");
         // Drop any empty assistant bubble that produced neither text nor error.
-        setMessages((m) =>
-          m.filter((x) => x.content.trim() !== "" || x.error || x.role === "user"),
+        setTranscript((m) =>
+          m.filter(
+            (x) => x.content.trim() !== "" || x.error || x.role === "user",
+          ),
         );
       }
     },
-    [provider],
+    [provider, setTranscript],
   );
 
   const send = useCallback(
     (text: string) => {
       const trimmed = text.trim();
-      if (!trimmed || isBusy) return;
-      const userMsg: ChatMessage = {
-        id: nextId(),
-        role: "user",
-        content: trimmed,
-      };
-      setMessages((m) => {
-        const next = [...m, userMsg];
-        void run(next);
-        return next;
-      });
+      if (!trimmed || busyRef.current) return;
+      const next: ChatMessage[] = [
+        ...messagesRef.current,
+        { id: nextId(), role: "user", content: trimmed },
+      ];
+      setTranscript(next);
+      void run(next);
     },
-    [isBusy, run],
+    [run, setTranscript],
   );
 
   /** Re-run the last user turn, discarding the failed assistant reply. */
   const retry = useCallback(() => {
-    if (isBusy) return;
-    setMessages((m) => {
-      const lastUser = [...m].reverse().find((x) => x.role === "user");
-      if (!lastUser) return m;
-      const idx = m.findIndex((x) => x.id === lastUser.id);
-      const next = m.slice(0, idx + 1);
-      void run(next);
-      return next;
-    });
-  }, [isBusy, run]);
+    if (busyRef.current) return;
+    const current = messagesRef.current;
+    const lastUserIndex = current.map((x) => x.role).lastIndexOf("user");
+    if (lastUserIndex < 0) return;
+    const next = current.slice(0, lastUserIndex + 1);
+    setTranscript(next);
+    void run(next);
+  }, [run, setTranscript]);
 
   const stop = useCallback(() => {
     abortRef.current?.abort();
@@ -209,10 +242,10 @@ export function useChat(provider: ProviderConfig | null) {
 
   const clear = useCallback(() => {
     abortRef.current?.abort();
-    setMessages([]);
+    setTranscript([]);
     setTools([]);
     setStatus("idle");
-  }, []);
+  }, [setTranscript]);
 
   return { messages, status, isBusy, tools, send, stop, retry, clear };
 }
