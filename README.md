@@ -24,7 +24,7 @@ language.
 ## Contents
 
 - [What it does](#what-it-does)
-- [Architecture](#architecture)
+- [Architecture](#architecture) · [full architecture document →](docs/ARCHITECTURE.md)
 - [Database schema](#database-schema)
 - [Authentication and permissions](#authentication-and-permissions)
 - [Synthetic dataset](#synthetic-dataset)
@@ -62,6 +62,12 @@ capability and cannot read a subject the signed-in teacher does not teach.
 ---
 
 ## Architecture
+
+> **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** has the full picture with
+> Mermaid diagrams: system context, component map, ER diagram, request
+> lifecycle, the authorization decision tree, the AI tool loop, the streaming
+> sequence, calculation semantics, deployment topology, and the reasoning
+> behind each design decision.
 
 ```
 ┌────────────────────────────┐         ┌──────────────────────────────┐
