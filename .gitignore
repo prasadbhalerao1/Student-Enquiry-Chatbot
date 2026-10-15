@@ -26,3 +26,7 @@ coverage/
 # Next.js build output
 frontend/.next/
 frontend/out/
+
+# Playwright MCP artifacts
+.playwright-mcp/
+*.png
