@@ -1,0 +1,16 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]
+  - generic [ref=e4]:
+    - generic [ref=e9]:
+      - heading "CSBS Faculty Workspace" [level=1] [ref=e10]
+      - paragraph [ref=e11]: Third-year Computer Science and Business Systems
+    - generic [ref=e15]:
+      - paragraph [ref=e16]: Demonstration sign-in — not real authentication
+      - paragraph [ref=e17]: Selecting a name issues a signed demo session. There is no password check. Every student record in this application is synthetic and must not be treated as an institutional record.
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "Continue as faculty member" [level=2] [ref=e20]
+        - paragraph [ref=e21]: Your subject access is resolved on the server from the teacher–subject assignments in the database.
+      - status [ref=e22]:
+        - generic [ref=e23]: Loading faculty list…
+    - paragraph [ref=e30]: Each faculty member sees only the subjects assigned to them. The backend rejects any request for another teacher's subject or for a student outside their teaching scope, including requests made by editing a URL directly.

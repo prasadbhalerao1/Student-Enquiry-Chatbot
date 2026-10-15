@@ -1,0 +1,145 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]
+  - generic [ref=e93]:
+    - generic [ref=e94]:
+      - strong [ref=e95]: Demonstration system.
+      - text: All student records are synthetic. Faculty sign-in is a demo selector, not real authentication.
+    - generic [ref=e96]:
+      - complementary [ref=e97]:
+        - link "Faculty Workspace" [ref=e99] [cursor=pointer]:
+          - /url: /
+        - navigation "Main" [ref=e104]:
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - link "Faculty Dashboard" [ref=e107] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e113]:
+              - link "My Subjects" [ref=e114] [cursor=pointer]:
+                - /url: /subjects
+            - listitem [ref=e117]:
+              - link "Attendance Analytics" [ref=e118] [cursor=pointer]:
+                - /url: /attendance
+            - listitem [ref=e122]:
+              - link "Student Directory" [ref=e123] [cursor=pointer]:
+                - /url: /students
+            - listitem [ref=e129]:
+              - link "Academic Performance" [ref=e130] [cursor=pointer]:
+                - /url: /performance
+            - listitem [ref=e133]:
+              - link "Assignments" [ref=e134] [cursor=pointer]:
+                - /url: /assignments
+            - listitem [ref=e138]:
+              - link "Extracurricular" [ref=e139] [cursor=pointer]:
+                - /url: /extracurricular
+            - listitem [ref=e146]:
+              - link "AI Assistant" [ref=e147] [cursor=pointer]:
+                - /url: /assistant
+            - listitem [ref=e150]:
+              - link "Settings" [ref=e151] [cursor=pointer]:
+                - /url: /settings
+        - generic [ref=e155]:
+          - paragraph [ref=e156]: SUMEDHA RAUT
+          - paragraph [ref=e157]: Assistant Professor
+          - generic [ref=e158]:
+            - generic [ref=e159]: CB3203L-A
+            - generic [ref=e160]: CB3203T-A
+            - generic [ref=e161]: HSO3203T-F
+          - button "Sign out" [ref=e162]
+      - main [ref=e167]:
+        - generic [ref=e174]:
+          - heading "Welcome, SUMEDHA RAUT" [level=1] [ref=e175]
+          - paragraph [ref=e176]: "Figures are computed from the database for the 3 subjects assigned to you. Threshold: 75% (illustrative setting)."
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - paragraph [ref=e179]: Subjects assigned
+            - paragraph [ref=e180]: "3"
+            - paragraph [ref=e181]: From teacher–subject assignments
+          - generic [ref=e182]:
+            - paragraph [ref=e183]: Students in scope
+            - paragraph [ref=e184]: "250"
+            - paragraph [ref=e185]: Distinct students across your subjects
+          - generic [ref=e186]:
+            - paragraph [ref=e187]: Below attendance threshold
+            - paragraph [ref=e188]: "240"
+            - paragraph [ref=e189]: Of 750 student–subject records
+          - generic [ref=e190]:
+            - paragraph [ref=e191]: Overdue assignments
+            - paragraph [ref=e192]: "469"
+            - paragraph [ref=e193]: Not submitted and past due
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - heading "Attendance by subject" [level=2] [ref=e197]
+              - paragraph [ref=e198]: "Pooled: sum(classes_attended) / sum(classes_conducted) across all authorized subjects. Every class counts equally."
+            - generic [ref=e199]:
+              - application [ref=e203]:
+                - generic [ref=e227]:
+                  - generic [ref=e228]:
+                    - generic [ref=e229]: CB3203L-A
+                    - generic [ref=e231]: CB3203T-A
+                    - generic [ref=e233]: HSO3203T-F
+                  - generic [ref=e235]:
+                    - generic [ref=e236]: 0%
+                    - generic [ref=e238]: 25%
+                    - generic [ref=e240]: 50%
+                    - generic [ref=e242]: 75%
+                    - generic [ref=e244]: 100%
+              - paragraph [ref=e246]: Bars below the 75% threshold are shown in red and labelled in the table on the Attendance Analytics page.
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - heading "Overall attendance" [level=2] [ref=e250]
+              - generic [ref=e251]:
+                - generic [ref=e252]:
+                  - paragraph [ref=e253]: Pooled (every class counts equally)
+                  - paragraph [ref=e254]: 79.47%
+                - generic [ref=e255]:
+                  - paragraph [ref=e256]: Mean per student–subject record
+                  - paragraph [ref=e257]: 79.48%
+                - paragraph [ref=e258]: These two differ when subjects have different class counts.
+            - generic [ref=e259]:
+              - heading "Awaiting evaluation" [level=2] [ref=e261]
+              - generic [ref=e262]:
+                - paragraph [ref=e263]: "145"
+                - paragraph [ref=e264]: Assessment results with no mark recorded. These are unevaluated, not zero scores.
+        - generic [ref=e265]:
+          - generic [ref=e266]:
+            - heading "Upcoming deadlines" [level=2] [ref=e268]
+            - paragraph [ref=e274]: No upcoming deadlines
+          - generic [ref=e275]:
+            - heading "Recent extracurricular activity" [level=2] [ref=e277]
+            - list [ref=e283]:
+              - listitem [ref=e284]:
+                - paragraph [ref=e285]: Music and Battle of Bands
+                - paragraph [ref=e286]: Mitali Inamdar · Apr 7, 2026
+              - listitem [ref=e287]:
+                - paragraph [ref=e288]: Inter-Department Cricket Tournament
+                - paragraph [ref=e289]: Devika Wagh · Apr 7, 2026
+              - listitem [ref=e290]:
+                - paragraph [ref=e291]: Music and Battle of Bands
+                - paragraph [ref=e292]: Aryan Yadav · Apr 7, 2026
+              - listitem [ref=e293]:
+                - paragraph [ref=e294]: Basketball Institute League
+                - paragraph [ref=e295]: Pooja Dalvi · Apr 6, 2026
+              - listitem [ref=e296]:
+                - paragraph [ref=e297]: Technical Poster Presentation
+                - paragraph [ref=e298]: Tanmay Kamat · Apr 6, 2026
+              - listitem [ref=e299]:
+                - paragraph [ref=e300]: Technical Fest Organising Committee
+                - paragraph [ref=e301]: Hemant Upadhyay · Apr 6, 2026
+          - generic [ref=e302]:
+            - heading "Ask the assistant" [level=2] [ref=e304]
+            - generic [ref=e307]:
+              - link "Summarize attendance across my assigned subjects." [ref=e308] [cursor=pointer]:
+                - /url: /assistant?q=Summarize%20attendance%20across%20my%20assigned%20subjects.
+              - link "Which students have the lowest attendance?" [ref=e309] [cursor=pointer]:
+                - /url: /assistant?q=Which%20students%20have%20the%20lowest%20attendance%3F
+              - link "Find students with overdue assignments." [ref=e310] [cursor=pointer]:
+                - /url: /assistant?q=Find%20students%20with%20overdue%20assignments.
+              - link "Show students who may need academic support." [ref=e311] [cursor=pointer]:
+                - /url: /assistant?q=Show%20students%20who%20may%20need%20academic%20support.
+        - generic [ref=e312]:
+          - link "Review low attendance" [ref=e313] [cursor=pointer]:
+            - /url: /attendance
+          - link "Review overdue work" [ref=e316] [cursor=pointer]:
+            - /url: /assignments
+  - generic [aria-hidden] [ref=e320]: "0"

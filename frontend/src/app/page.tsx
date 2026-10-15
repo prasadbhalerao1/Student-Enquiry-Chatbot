@@ -115,20 +115,21 @@ export default function DashboardPage() {
             </p>
           </CardHeader>
           <CardBody>
-            <div className="h-64 w-full">
+            <div className="h-72 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={chartData}
-                  margin={{ top: 4, right: 8, bottom: 4, left: -16 }}
+                  margin={{ top: 4, right: 8, bottom: 24, left: -16 }}
                 >
                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e9ec" vertical={false} />
                   <XAxis
                     dataKey="code"
                     tick={{ fontSize: 11, fill: "#5c6b77" }}
-                    angle={-20}
+                    angle={-25}
                     textAnchor="end"
-                    height={56}
+                    height={72}
                     interval={0}
+                    tickMargin={8}
                   />
                   <YAxis
                     domain={[0, 100]}
