@@ -623,6 +623,8 @@ pytest --tb=short -q
 
 ```bash
 cd frontend
+npm test                     # 25 Vitest tests
+npm run test:watch           # watch mode
 npx tsc --noEmit             # type checking
 npx eslint src               # linting
 npm run build                # production build
@@ -637,9 +639,17 @@ npm run build                # production build
 | `test_business_logic.py` | 28 | Zero vs. missing marks, absent vs. unevaluated, overdue vs. unmarked, pooled vs. mean averages, pagination, sorting |
 | `test_authorization.py` | 30 | Forged/tampered/expired cookies, cross-teacher subject denial, cross-scope student denial, coordinator gating, CSV scope and filter fidelity, no config leakage |
 | `test_ai.py` | 57 | Provider factory, SSRF rejection, credential redaction, tool authorization, progressive streaming, provider failure, prompt-injection resistance |
+| `use-chat.test.tsx` (frontend) | 14 | SSE frame parsing including split chunks, progressive token rendering, stop/retry/clear, HTTP and network failures, message ordering, no double-send |
+| `components.test.tsx` (frontend) | 11 | Missing values rendered as `—` rather than 0%, key masking, accessible text status labels |
 
-Tests run against an in-memory SQLite database built from the same SQLAlchemy
-metadata, so **no live PostgreSQL is needed** to run the suite.
+Backend tests run against an in-memory SQLite database built from the same
+SQLAlchemy metadata, so **no live PostgreSQL is needed**. Frontend tests stub
+`fetch` with a controllable `ReadableStream`, so **no backend and no provider
+credential is needed** either.
+
+The frontend tests found two real bugs during development: side effects inside a
+React state updater, and **Stop** not interrupting a pending stream read. Both
+are fixed.
 
 ### What was and was not verified
 
@@ -649,7 +659,10 @@ metadata, so **no live PostgreSQL is needed** to run the suite.
 - Dashboard, subjects, attendance, student directory and performance pages in a
   real browser
 - CSV export correctness and stability under repeated calls
-- Frontend production build, type checking and linting
+- Frontend production build, type checking, linting and 25 unit tests
+- All nine pages rendered in a real browser (Playwright) against live Neon data
+- The assistant honestly reporting "No AI provider is configured" with a Retry
+  button instead of fabricating an answer
 
 **Verified with mocks only:**
 - All AI provider integrations. Streaming, tool calling, error handling and
@@ -674,6 +687,8 @@ vercel
 
 Set `NEXT_PUBLIC_API_BASE_URL` to the deployed backend URL.
 
+`frontend/vercel.json` pins the framework and adds security headers.
+
 ### Backend → a Python host
 
 FastAPI with SSE streaming and a persistent connection pool is better suited to
@@ -684,6 +699,13 @@ or any container host** are good fits.
 Build:  pip install -r requirements.txt
 Start:  uvicorn app.main:app --host 0.0.0.0 --port $PORT
 ```
+
+Two manifests are provided:
+
+- `backend/render.yaml` — a Render blueprint with a health check and
+  `SESSION_SECRET` generated automatically.
+- `backend/Dockerfile` — a non-root Python 3.12 image with a health check, for
+  any container host.
 
 Environment variables:
 
@@ -713,6 +735,18 @@ python scripts/seed_database.py
 Create a project, copy the pooled connection string into `DATABASE_URL`.
 `pool_pre_ping` and `pool_recycle=280` are configured because Neon's pooler
 closes idle connections.
+
+### Continuous integration
+
+`.github/workflows/ci.yml` runs on every push and pull request:
+
+| Job | Steps |
+|---|---|
+| Backend | `pytest` (178 tests), then regenerate the dataset and fail if any CSV changed |
+| Frontend | `tsc --noEmit`, `eslint --max-warnings=0`, `npm test` (25 tests), `npm run build` |
+
+No database and no provider credential are needed, so CI runs on a clean
+checkout with no secrets configured.
 
 ---
 

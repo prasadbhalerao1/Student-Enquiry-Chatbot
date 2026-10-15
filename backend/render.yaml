@@ -1,0 +1,27 @@
+# Render blueprint for the FastAPI backend.
+#
+# FastAPI with SSE streaming and a persistent connection pool suits a
+# long-running process better than serverless functions. Railway, Fly.io or any
+# container host work the same way; only the manifest format differs.
+services:
+  - type: web
+    name: csbs-faculty-api
+    runtime: python
+    plan: starter
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: DATABASE_URL
+        sync: false        # set in the dashboard
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        sync: false        # exact Vercel origin, no trailing slash
+      - key: ATTENDANCE_THRESHOLD
+        value: "75"
+      - key: COOKIE_SECURE
+        value: "1"         # required for cross-site session cookies

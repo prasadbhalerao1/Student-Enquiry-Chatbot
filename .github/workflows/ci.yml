@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend (pytest)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+
+      - run: pip install -r requirements.txt
+
+      # Tests use an in-memory SQLite database, so no PostgreSQL service is
+      # needed. DATABASE_URL is only read at import time for engine creation.
+      - name: Run tests
+        env:
+          DATABASE_URL: postgresql+psycopg://user:pass@localhost/testdb
+          SESSION_SECRET: ci-test-secret-not-used-in-production
+        run: pytest -q
+
+      - name: Verify the dataset regenerates identically
+        env:
+          DATABASE_URL: postgresql+psycopg://user:pass@localhost/testdb
+          SESSION_SECRET: ci-test-secret-not-used-in-production
+        run: |
+          python scripts/generate_dataset.py
+          git diff --exit-code ../data/synthetic/
+
+  frontend:
+    name: Frontend (types, lint, tests, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npx eslint src --max-warnings=0
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
