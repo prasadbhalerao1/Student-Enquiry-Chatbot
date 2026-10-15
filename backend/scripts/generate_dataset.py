@@ -281,6 +281,12 @@ def build_grades(
                 # Absent for the assessment -> blank marks, flagged absent.
                 rows.append([asm_id, sid, "", "true"])
                 continue
+            if roll < 0.075:
+                # Attempted and scored zero. This is a REAL mark of 0 and is
+                # deliberately distinct from the blank rows above, so the
+                # dataset exercises the missing-vs-zero distinction.
+                rows.append([asm_id, sid, 0.0, "false"])
+                continue
             frac = min(1.0, max(0.0, rng.gauss(ability[sid], 0.10)))
             marks = round(max_marks * frac, 1)
             marks = max(0.0, min(float(max_marks), marks))

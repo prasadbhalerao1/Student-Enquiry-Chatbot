@@ -180,6 +180,25 @@ class TestAcademics:
         assert all(g["marks_obtained"] != "0" for g in blanks)
         assert len(blanks) != len(zeros)
 
+    def test_all_three_evaluation_states_exist(self):
+        """A blank mark, an absence and a real zero must all be present.
+
+        These are three different things, and the dataset has to contain each
+        so the distinction is exercised against real data and not only in test
+        fixtures.
+        """
+        grades = rows("grades.csv")
+        unevaluated = [
+            g for g in grades
+            if g["marks_obtained"] == "" and g["is_absent"] == "false"
+        ]
+        absent = [g for g in grades if g["is_absent"] == "true"]
+        real_zeros = [g for g in grades if g["marks_obtained"] in ("0.0", "0")]
+
+        assert unevaluated, "need results with no mark recorded"
+        assert absent, "need absences"
+        assert real_zeros, "need students who attempted and scored zero"
+
     def test_absent_is_distinct_from_unevaluated(self):
         grades = rows("grades.csv")
         absent = [g for g in grades if g["is_absent"] == "true"]

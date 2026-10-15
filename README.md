@@ -154,11 +154,11 @@ extracurricular_activities ──< student_activities >────┘
 | `students` | 250 | Divisions A/B/C, year 3, semester 6 |
 | `attendance` | 3,000 | One row per student–subject pair |
 | `assessments` | 60 | 5 per subject, weighted |
-| `grades` | 15,000 | `marks_obtained IS NULL` = not evaluated |
+| `grades` | 15,000 | 532 unevaluated, 312 absent, 217 genuine zeros |
 | `assignments` | 36 | 3 per subject |
 | `student_assignments` | 9,000 | `pending` / `submitted` / `evaluated` |
 | `extracurricular_activities` | 25 | 10 categories |
-| `student_activities` | 571 | 200 of 250 students participate |
+| `student_activities` | 572 | 200 of 250 students participate |
 
 **Constraints enforced in the database**, not just in application code:
 
@@ -176,8 +176,11 @@ UNIQUE (teacher_id, subject_code)        -- assignments
 These are easy to conflate and produce wrong answers when conflated:
 
 1. **Missing mark vs. zero.** `grades.marks_obtained IS NULL` means *not
-   evaluated*. A recorded `0.0` means the student scored zero. Performance
-   averages exclude NULLs from the denominator; they never treat them as zero.
+   evaluated*. A recorded `0.0` means the student attempted and scored zero.
+   Performance averages exclude NULLs from the denominator; they never treat
+   them as zero. The dataset deliberately contains all three states — 532
+   unevaluated, 312 absent and 217 real zeros — so the distinction is exercised
+   against real data rather than only in test fixtures.
 2. **Absent vs. unevaluated.** `grades.is_absent` is a separate boolean, so an
    absence is distinguishable from work that simply has not been marked.
 3. **Overdue vs. unmarked.** An assignment is overdue only when
@@ -616,7 +619,7 @@ subjects, `^STU\d{4}$` for students) before reaching the database.
 ```powershell
 cd backend
 .\.venv\Scripts\Activate.ps1
-pytest                       # all 178 tests
+pytest                       # all 179 tests
 pytest tests/test_authorization.py -v
 pytest --tb=short -q
 ```
@@ -635,7 +638,7 @@ npm run build                # production build
 | Suite | Tests | Covers |
 |---|---:|---|
 | `test_attendance_math.py` | 25 | Percentages, exact-threshold boundaries, the classes-needed formula verified against its own definition, invalid inputs |
-| `test_dataset_integrity.py` | 38 | Exactly 12 subjects, faculty spelling, valid references, attendance bounds, all analytic bands present, assignment-state consistency, byte-identical regeneration |
+| `test_dataset_integrity.py` | 39 | Exactly 12 subjects, faculty spelling, valid references, attendance bounds, all analytic bands present, assignment-state consistency, byte-identical regeneration |
 | `test_business_logic.py` | 28 | Zero vs. missing marks, absent vs. unevaluated, overdue vs. unmarked, pooled vs. mean averages, pagination, sorting |
 | `test_authorization.py` | 30 | Forged/tampered/expired cookies, cross-teacher subject denial, cross-scope student denial, coordinator gating, CSV scope and filter fidelity, no config leakage |
 | `test_ai.py` | 57 | Provider factory, SSRF rejection, credential redaction, tool authorization, progressive streaming, provider failure, prompt-injection resistance |
@@ -654,7 +657,7 @@ are fixed.
 ### What was and was not verified
 
 **Verified against the live Neon database:**
-- Schema migration, seeding of 27,974 rows, integrity checks
+- Schema migration, seeding of 27,975 rows, integrity checks
 - All API endpoints, including 403/401 authorization behaviour over HTTP
 - Dashboard, subjects, attendance, student directory and performance pages in a
   real browser
@@ -742,7 +745,7 @@ closes idle connections.
 
 | Job | Steps |
 |---|---|
-| Backend | `pytest` (178 tests), then regenerate the dataset and fail if any CSV changed |
+| Backend | `pytest` (179 tests), then regenerate the dataset and fail if any CSV changed |
 | Frontend | `tsc --noEmit`, `eslint --max-warnings=0`, `npm test` (25 tests), `npm run build` |
 
 No database and no provider credential are needed, so CI runs on a clean
