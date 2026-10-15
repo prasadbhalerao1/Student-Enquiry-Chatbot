@@ -8,6 +8,33 @@ academic performance, assignments and extracurricular participation — either
 through the application's pages or by asking an AI assistant in natural
 language.
 
+### 🔗 Try it
+
+| | |
+|---|---|
+| **Live app** | **https://frontend-kappa-puce-90.vercel.app** |
+| API | [interactive docs](https://csbs-faculty-api.vercel.app/docs) · [health check](https://csbs-faculty-api.vercel.app/api/health) |
+| Source | https://github.com/prasadbhalerao1/Student-Enquiry-Chatbot |
+| Architecture | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — 13 diagrams |
+
+No sign-up. Pick any faculty member from the demo selector and you are in.
+Each one sees a different set of subjects, so try two and compare:
+
+| Try | To see |
+|---|---|
+| **NEERAJ SATHAWANE** | Two subjects (CB3202T, CB3202L); ask the AI *"which students have the lowest attendance?"* |
+| **SUJIN ACHANKUNJU PANIKKASSERI** | The only **department coordinator** — unlocks department-wide extracurricular reporting |
+| **SUMEDHA RAUT** | Three subjects across theory and lab |
+
+Then edit the URL to a subject that teacher does not teach — for example
+`/attendance?subject=CB3201T` as NEERAJ — and watch the backend refuse it.
+The AI assistant refuses the same request, even when told to ignore its rules.
+
+> The hosted demo answers AI questions using a provider key configured on the
+> deployment, so the assistant works without you supplying one. Running it
+> yourself, you add your own key in **Settings** instead — see
+> [AI providers and BYOK](#ai-providers-and-byok).
+
 > ### ⚠️ Demonstration system
 >
 > **Every student record in this project is synthetic.** Names, roll numbers,
