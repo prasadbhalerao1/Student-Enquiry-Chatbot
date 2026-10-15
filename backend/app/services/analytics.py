@@ -172,6 +172,46 @@ def subject_attendance(
     return Page(records[start:start + page_size], total, max(1, page), page_size)
 
 
+def subject_attendance_all(
+    db: Session,
+    subject_code: str,
+    threshold: float,
+    *,
+    division: str | None = None,
+    search: str | None = None,
+    below_only: bool = False,
+) -> list[dict]:
+    """Every matching row for one subject, unpaginated, for CSV export.
+
+    Bounded by a single subject's enrolment, so it is safe to materialise.
+    """
+    q = _attendance_rows_query(subject_code, division)
+    if search:
+        pattern = f"%{search.strip()}%"
+        q = q.where(
+            Student.full_name.ilike(pattern) | Student.roll_number.ilike(pattern)
+        )
+
+    out = []
+    for sid, name, roll, div, attended, conducted in db.execute(q).all():
+        below = is_below_threshold(attended, conducted, threshold)
+        if below_only and not below:
+            continue
+        out.append({
+            "student_id": sid,
+            "full_name": name,
+            "roll_number": roll,
+            "division": div,
+            "classes_attended": attended,
+            "classes_conducted": conducted,
+            "attendance_percentage": attendance_percentage(attended, conducted),
+            "below_threshold": below,
+            "status": _status_label(attended, conducted, threshold),
+        })
+    out.sort(key=lambda r: r["attendance_percentage"])
+    return out
+
+
 def _status_label(attended: int, conducted: int, threshold: float) -> str:
     """Accessible text status, never conveyed by colour alone."""
     pct = attendance_percentage(attended, conducted)
