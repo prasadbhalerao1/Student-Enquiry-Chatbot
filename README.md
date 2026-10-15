@@ -692,6 +692,29 @@ Set `NEXT_PUBLIC_API_BASE_URL` to the deployed backend URL.
 
 `frontend/vercel.json` pins the framework and adds security headers.
 
+### Live deployment
+
+| | URL |
+|---|---|
+| Frontend | https://frontend-kappa-puce-90.vercel.app |
+| Backend | https://csbs-faculty-api.vercel.app |
+| Database | Neon PostgreSQL |
+
+Both run on Vercel. `backend/api/index.py` is the serverless entrypoint; Vercel
+detects FastAPI and serves the ASGI app directly, so **no rewrite rule is
+needed** — adding one rewrites the request path itself and makes every route
+404.
+
+> **Serverless caveats, measured not assumed.** The health check, session
+> cookies, authorization and all data endpoints work correctly. But this
+> backend was designed for a long-running process, and on serverless:
+> SSE streaming is bounded by the 60 s function limit, so a long model turn can
+> be truncated; the SQLAlchemy pool cannot persist across invocations, so a
+> pooled Neon connection string is required; and the in-process rate limiter
+> keeps per-instance counters, so limits are much weaker than configured.
+> `backend/render.yaml` and `backend/Dockerfile` remain the better choice when
+> reliable streaming matters.
+
 ### Backend → a Python host
 
 FastAPI with SSE streaming and a persistent connection pool is better suited to
