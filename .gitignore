@@ -22,3 +22,7 @@ out/
 .DS_Store
 .vercel
 coverage/
+
+# Next.js build output
+frontend/.next/
+frontend/out/
