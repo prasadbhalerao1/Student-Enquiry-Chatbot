@@ -5,6 +5,7 @@ client for this one call and is never logged, persisted or echoed back.
 """
 from __future__ import annotations
 
+
 import logging
 
 from fastapi import APIRouter, Depends, Request
@@ -12,7 +13,7 @@ from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 
 from app.ai.model_registry import list_providers
-from app.ai.orchestration import stream_chat, test_provider_connection
+from app.ai.orchestration import _sse, stream_chat, test_provider_connection
 from app.ai.provider_factory import ProviderConfig
 from app.api.dependencies import (
     api_rate_limit,
@@ -35,6 +36,8 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api", tags=["ai"])
 
 
+
+
 def _to_config(p: ProviderSettings) -> ProviderConfig:
     return ProviderConfig(
         provider=p.provider,
@@ -43,6 +46,23 @@ def _to_config(p: ProviderSettings) -> ProviderConfig:
         base_url=p.base_url,
         temperature=p.temperature,
     )
+
+
+def _server_default() -> ProviderConfig | None:
+    """The deployment's own provider, if one is configured."""
+    if not settings.has_default_provider:
+        return None
+    return ProviderConfig(
+        provider=settings.default_ai_provider,
+        model=settings.default_ai_model,
+        api_key=settings.default_ai_api_key or None,
+        base_url=settings.default_ai_base_url or None,
+    )
+
+
+def _resolve(p: ProviderSettings | None) -> ProviderConfig | None:
+    """A teacher's own configuration wins; otherwise use the server default."""
+    return _to_config(p) if p is not None else _server_default()
 
 
 @router.get("/providers", response_model=list[GenericDict],
@@ -62,6 +82,24 @@ async def test_connection(
     return ProviderTestResponse(**result)
 
 
+@router.get("/providers/default", response_model=GenericDict,
+            dependencies=[Depends(api_rate_limit)])
+def default_provider(
+    _: TeacherPrincipal = Depends(current_teacher),
+) -> GenericDict:
+    """Whether this deployment supplies a provider, so the UI can say so.
+
+    Returns the provider and model only. The API key is never included.
+    """
+    if not settings.has_default_provider:
+        return {"configured": False}
+    return {
+        "configured": True,
+        "provider": settings.default_ai_provider,
+        "model": settings.default_ai_model,
+    }
+
+
 @router.post("/chat", dependencies=[Depends(chat_rate_limit)])
 async def chat(
     payload: ChatRequest,
@@ -76,13 +114,32 @@ async def chat(
     provider emits them; nothing is buffered to completion first.
     """
     history = [{"role": m.role, "content": m.content} for m in payload.messages]
+    config = _resolve(payload.provider)
+
+    if config is None:
+        # No teacher configuration and no server default. Say so plainly
+        # rather than letting the model layer fail with a vaguer message.
+        message = (
+            "No AI provider is configured. Open Settings to choose a "
+            "provider and enter your API key."
+        )
+
+        async def refuse():
+            yield _sse("error", {"message": message, "kind": "configuration"})
+            yield _sse("done", {"ok": False})
+
+        return StreamingResponse(
+            refuse(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-store"},
+        )
 
     async def generator():
         try:
             async for frame in stream_chat(
                 db=db,
                 principal=principal,
-                config=_to_config(payload.provider),
+                config=config,
                 history=history,
                 threshold=th,
                 timeout=settings.upstream_timeout,

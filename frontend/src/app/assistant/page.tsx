@@ -26,7 +26,8 @@ import {
   Card,
   LoadingState,
 } from "@/components/ui/primitives";
-import type { ChatMessage } from "@/lib/types";
+import type { ChatMessage, DefaultProviderInfo } from "@/lib/types";
+import { useApi } from "@/lib/use-api";
 import { useChat } from "@/lib/use-chat";
 
 const SUGGESTIONS = [
@@ -50,6 +51,7 @@ export default function AssistantPage() {
 function AssistantView() {
   const { teacher, provider } = useSession();
   const params = useSearchParams();
+  const serverDefault = useApi<DefaultProviderInfo>("/api/providers/default");
   const { messages, status, isBusy, tools, send, stop, retry, clear } =
     useChat(provider);
 
@@ -112,6 +114,17 @@ function AssistantView() {
             <span className="text-[var(--muted-foreground)]">
               Your API key stays in this browser tab and is sent only with each
               request.
+            </span>
+          </>
+        ) : serverDefault.data?.configured ? (
+          <>
+            <Badge tone="info">
+              <Check className="h-3 w-3" />
+              {serverDefault.data.provider} · {serverDefault.data.model}
+            </Badge>
+            <span className="text-[var(--muted-foreground)]">
+              Using this deployment&apos;s provider. Add your own key in
+              Settings to use a different model.
             </span>
           </>
         ) : (

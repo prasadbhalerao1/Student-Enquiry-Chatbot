@@ -45,20 +45,6 @@ export function useChat(provider: ProviderConfig | null) {
 
   const run = useCallback(
     async (history: ChatMessage[]) => {
-      if (!provider) {
-        setTranscript((m) => [
-          ...m,
-          {
-            id: nextId(),
-            role: "assistant",
-            content: "",
-            error:
-              "No AI provider is configured. Open Settings to choose a provider and enter your API key.",
-          },
-        ]);
-        return;
-      }
-
       const controller = new AbortController();
       abortRef.current = controller;
       setStatus("thinking");
@@ -83,7 +69,10 @@ export function useChat(provider: ProviderConfig | null) {
             messages: history
               .filter((m) => !m.error && m.content.trim())
               .map((m) => ({ role: m.role, content: m.content })),
-            provider,
+            // Omitted when the teacher has not configured a provider. The
+            // backend then uses its own default if one exists, or returns a
+            // clear configuration error if not.
+            ...(provider ? { provider } : {}),
           }),
         });
 

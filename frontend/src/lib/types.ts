@@ -287,6 +287,13 @@ export interface ProviderTestResult {
   sample?: string | null;
 }
 
+/** Whether the deployment supplies a provider. Never includes a key. */
+export interface DefaultProviderInfo {
+  configured: boolean;
+  provider?: string;
+  model?: string;
+}
+
 export interface ChatMessage {
   id: string;
   role: "user" | "assistant";

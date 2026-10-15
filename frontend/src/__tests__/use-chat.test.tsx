@@ -59,17 +59,43 @@ beforeEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe("useChat without a provider", () => {
-  it("explains that no provider is configured instead of calling the API", async () => {
-    const fetchMock = vi.fn();
-    vi.stubGlobal("fetch", fetchMock);
+describe("useChat without a teacher-configured provider", () => {
+  it("omits `provider` so the server can use its own default", async () => {
+    const fetchMock = completeFetch([
+      sse("token", { text: "from the server default" }),
+      sse("done", { ok: true }),
+    ]);
 
     const { result } = renderHook(() => useChat(null));
     act(() => result.current.send("Show attendance"));
 
-    await waitFor(() => expect(result.current.messages).toHaveLength(2));
-    expect(result.current.messages[1].error).toMatch(/no ai provider/i);
-    expect(fetchMock).not.toHaveBeenCalled();
+    await waitFor(() =>
+      expect(result.current.messages[1].content).toBe(
+        "from the server default",
+      ),
+    );
+    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    expect(body).not.toHaveProperty("provider");
+  });
+
+  it("relays the server's configuration error when there is no default", async () => {
+    completeFetch([
+      sse("error", {
+        message:
+          "No AI provider is configured. Open Settings to choose a provider and enter your API key.",
+        kind: "configuration",
+      }),
+      sse("done", { ok: false }),
+    ]);
+
+    const { result } = renderHook(() => useChat(null));
+    act(() => result.current.send("Show attendance"));
+
+    await waitFor(() =>
+      expect(result.current.messages[1].error).toMatch(/no ai provider/i),
+    );
+    // A configuration failure must never produce invented text.
+    expect(result.current.messages[1].content).toBe("");
   });
 });
 

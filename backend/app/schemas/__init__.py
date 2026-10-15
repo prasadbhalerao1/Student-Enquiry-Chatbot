@@ -182,7 +182,9 @@ class ProviderSettings(BaseModel):
 
 class ChatRequest(BaseModel):
     messages: Annotated[list[ChatMessage], Field(min_length=1, max_length=40)]
-    provider: ProviderSettings
+    # Omitted when the teacher has not configured their own provider; the
+    # server then falls back to DEFAULT_AI_* if one is configured.
+    provider: ProviderSettings | None = None
 
 
 class ProviderTestRequest(BaseModel):

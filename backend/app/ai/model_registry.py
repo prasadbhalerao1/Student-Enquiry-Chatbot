@@ -54,7 +54,12 @@ PROVIDERS: dict[str, ProviderSpec] = {
         requires_api_key=True,
         supports_tool_calling=True,
         supports_custom_base_url=False,
-        suggested_models=["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-pro"],
+        suggested_models=[
+            "gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-flash-latest",
+            "gemini-3.1-pro-preview",
+        ],
+        notes="Flash-Lite is the cheapest tier. Gemini 3.x needs "
+              "langchain-google-genai 4.x for tool calling.",
         api_key_url="https://aistudio.google.com/apikey",
     ),
     "groq": ProviderSpec(

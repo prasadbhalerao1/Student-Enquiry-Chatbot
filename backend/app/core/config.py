@@ -24,6 +24,21 @@ class Settings(BaseSettings):
     max_chat_messages: int = 40
     upstream_timeout: int = 120
 
+    # ---- Optional server-side AI fallback -------------------------------
+    # A deployment may configure one provider so the assistant works without
+    # each teacher supplying a key. This is a convenience for a demo
+    # deployment, NOT the primary path: a teacher's own BYOK configuration
+    # always takes precedence, and this credential is never sent to the
+    # browser. Leave blank to require BYOK.
+    default_ai_provider: str = ""
+    default_ai_model: str = ""
+    default_ai_api_key: str = ""
+    default_ai_base_url: str = ""
+
+    @property
+    def has_default_provider(self) -> bool:
+        return bool(self.default_ai_provider and self.default_ai_model)
+
     @property
     def sqlalchemy_url(self) -> str:
         """Normalise a bare postgresql:// URL onto the psycopg v3 driver."""
