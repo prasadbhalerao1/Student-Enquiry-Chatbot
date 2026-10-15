@@ -1,0 +1,9 @@
+teacher_id,full_name,department,designation,email,is_department_coordinator
+TCH001,SUJIN ACHANKUNJU PANIKKASSERI,Computer Science and Business Systems,Professor,sujin.achankunju.panikkasseri@csbs-demo.invalid,true
+TCH002,Aarrjun Shrikrishna Umrikar,Computer Science and Business Systems,Assistant Professor,aarrjun.shrikrishna.umrikar@csbs-demo.invalid,false
+TCH003,MAHESH KANTHALE,Computer Science and Business Systems,Assistant Professor,mahesh.kanthale@csbs-demo.invalid,false
+TCH004,NEERAJ SATHAWANE,Computer Science and Business Systems,Assistant Professor,neeraj.sathawane@csbs-demo.invalid,false
+TCH005,SUMEDHA RAUT,Computer Science and Business Systems,Assistant Professor,sumedha.raut@csbs-demo.invalid,false
+TCH006,RUTUJA S BACCHAV,Computer Science and Business Systems,Assistant Professor,rutuja.s.bacchav@csbs-demo.invalid,false
+TCH007,Kavita Manojkumar Patil,Computer Science and Business Systems,Assistant Professor,kavita.manojkumar.patil@csbs-demo.invalid,false
+TCH008,SUHASINI BHAT,Computer Science and Business Systems,Assistant Professor,suhasini.bhat@csbs-demo.invalid,false

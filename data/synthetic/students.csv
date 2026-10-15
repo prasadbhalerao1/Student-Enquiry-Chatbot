@@ -1,0 +1,251 @@
+student_id,full_name,roll_number,department,academic_year,semester,division,email,skills,interests
+STU0001,Raj Thakur,CSBS3A001,Computer Science and Business Systems,3,6,A,stu0001@csbs-demo.invalid,PostgreSQL; Arduino; Git; Spring Boot; Docker,DevOps; Competitive Programming; Fintech; Computer Vision
+STU0002,Shaurya Vartak,CSBS3B001,Computer Science and Business Systems,3,6,B,stu0002@csbs-demo.invalid,TensorFlow; C++; Power BI,Computer Vision; Business Analytics; Competitive Programming
+STU0003,Rhea Vartak,CSBS3C001,Computer Science and Business Systems,3,6,C,stu0003@csbs-demo.invalid,PyTorch; scikit-learn; Arduino; AWS; Power BI,Robotics; IoT; Open Source; Data Analytics
+STU0004,Ira Inamdar,CSBS3A002,Computer Science and Business Systems,3,6,A,stu0004@csbs-demo.invalid,Kubernetes; MongoDB; ROS,Game Development; Competitive Programming
+STU0005,Rhea Phadke,CSBS3B002,Computer Science and Business Systems,3,6,B,stu0005@csbs-demo.invalid,scikit-learn; Node.js; React; Python; PostgreSQL; JavaScript,Web Development; Competitive Programming; Cloud Computing; Business Analytics
+STU0006,Sahil Pawar,CSBS3C002,Computer Science and Business Systems,3,6,C,stu0006@csbs-demo.invalid,Spring Boot; JavaScript; SQL,Robotics; Computer Vision; Machine Learning; UI/UX Design
+STU0007,Rahul Joshi,CSBS3A003,Computer Science and Business Systems,3,6,A,stu0007@csbs-demo.invalid,REST APIs; PyTorch; scikit-learn,Natural Language Processing; Entrepreneurship; Business Analytics; Robotics
+STU0008,Rhea Salvi,CSBS3B003,Computer Science and Business Systems,3,6,B,stu0008@csbs-demo.invalid,TensorFlow; SQL; Kubernetes; TypeScript; PostgreSQL; JavaScript,Open Source; Game Development; Fintech
+STU0009,Kavya Rane,CSBS3C003,Computer Science and Business Systems,3,6,C,stu0009@csbs-demo.invalid,scikit-learn; Spring Boot; JavaScript; Tableau; Arduino,Open Source; Data Analytics; Cloud Computing; Fintech
+STU0010,Ira Nadkarni,CSBS3A004,Computer Science and Business Systems,3,6,A,stu0010@csbs-demo.invalid,Arduino; MongoDB; PostgreSQL; scikit-learn; Tableau; Flutter,Entrepreneurship; IoT
+STU0011,Ira Upadhyay,CSBS3B004,Computer Science and Business Systems,3,6,B,stu0011@csbs-demo.invalid,React; JavaScript; ROS; Tableau,Business Analytics; Cloud Computing; Open Source
+STU0012,Saanvi Nadkarni,CSBS3C004,Computer Science and Business Systems,3,6,C,stu0012@csbs-demo.invalid,scikit-learn; REST APIs; Arduino; Tableau,Entrepreneurship; Competitive Programming; Open Source
+STU0013,Sanjana Iyer,CSBS3A005,Computer Science and Business Systems,3,6,A,stu0013@csbs-demo.invalid,REST APIs; PostgreSQL; Node.js; TensorFlow; JavaScript,Competitive Programming; Fintech
+STU0014,Ishaan Deshmukh,CSBS3B005,Computer Science and Business Systems,3,6,B,stu0014@csbs-demo.invalid,MongoDB; C++; scikit-learn; Node.js,Machine Learning; Entrepreneurship
+STU0015,Tanvi Chitnis,CSBS3C005,Computer Science and Business Systems,3,6,C,stu0015@csbs-demo.invalid,TypeScript; AWS; Python; Linux,IoT; Data Analytics; Machine Learning; UI/UX Design
+STU0016,Rudra Fernandes,CSBS3A006,Computer Science and Business Systems,3,6,A,stu0016@csbs-demo.invalid,Node.js; Git; C++; Kubernetes,DevOps; Business Analytics; Robotics; Cloud Computing
+STU0017,Nikhil Oak,CSBS3B006,Computer Science and Business Systems,3,6,B,stu0017@csbs-demo.invalid,Git; Spring Boot; React,Business Analytics; Entrepreneurship; Product Management
+STU0018,Dhruv Upadhyay,CSBS3C006,Computer Science and Business Systems,3,6,C,stu0018@csbs-demo.invalid,ROS; Python; Spring Boot; PyTorch; REST APIs,Computer Vision; Robotics
+STU0019,Deepika Yadav,CSBS3A007,Computer Science and Business Systems,3,6,A,stu0019@csbs-demo.invalid,Figma; Git; Node.js; SQL,DevOps; Entrepreneurship; Computer Vision; Game Development
+STU0020,Lavanya Sapkal,CSBS3B007,Computer Science and Business Systems,3,6,B,stu0020@csbs-demo.invalid,Flutter; JavaScript; Power BI; Tableau,IoT; Entrepreneurship; Computer Vision
+STU0021,Ishaan Nadkarni,CSBS3C007,Computer Science and Business Systems,3,6,C,stu0021@csbs-demo.invalid,Tableau; Arduino; Docker; Linux,Entrepreneurship; Cybersecurity; Competitive Programming
+STU0022,Aditi Kamat,CSBS3A008,Computer Science and Business Systems,3,6,A,stu0022@csbs-demo.invalid,Figma; Spring Boot; TensorFlow; MongoDB,Business Analytics; Web Development; Robotics; Entrepreneurship
+STU0023,Sarthak Chitnis,CSBS3B008,Computer Science and Business Systems,3,6,B,stu0023@csbs-demo.invalid,ROS; Figma; PostgreSQL; scikit-learn; Java; Tableau,Computer Vision; Machine Learning; Cybersecurity; Entrepreneurship
+STU0024,Lalit Kamat,CSBS3C008,Computer Science and Business Systems,3,6,C,stu0024@csbs-demo.invalid,Power BI; AWS; Spring Boot,Open Source; Business Analytics; Natural Language Processing
+STU0025,Hrishikesh Fernandes,CSBS3A009,Computer Science and Business Systems,3,6,A,stu0025@csbs-demo.invalid,Spring Boot; scikit-learn; PyTorch; AWS; Flutter; Figma,Business Analytics; Robotics
+STU0026,Nandini Dalvi,CSBS3B009,Computer Science and Business Systems,3,6,B,stu0026@csbs-demo.invalid,TypeScript; Flutter; Pandas,Product Management; Machine Learning
+STU0027,Kavya Hegde,CSBS3C009,Computer Science and Business Systems,3,6,C,stu0027@csbs-demo.invalid,Node.js; Docker; Power BI; ROS; Arduino,Cloud Computing; Data Analytics; UI/UX Design; DevOps
+STU0028,Prisha Agarwal,CSBS3A010,Computer Science and Business Systems,3,6,A,stu0028@csbs-demo.invalid,Arduino; Kubernetes; Tableau; AWS; Java,Game Development; UI/UX Design; Product Management
+STU0029,Pooja Pawar,CSBS3B010,Computer Science and Business Systems,3,6,B,stu0029@csbs-demo.invalid,ROS; SQL; TensorFlow; Git; PyTorch; AWS,DevOps; Data Analytics
+STU0030,Anirudh Vaidya,CSBS3C010,Computer Science and Business Systems,3,6,C,stu0030@csbs-demo.invalid,Flutter; Spring Boot; scikit-learn; TypeScript; Linux,Cloud Computing; UI/UX Design; Robotics
+STU0031,Hemant Bhandari,CSBS3A011,Computer Science and Business Systems,3,6,A,stu0031@csbs-demo.invalid,Python; Linux; PyTorch; JavaScript; Pandas; Flutter,UI/UX Design; Cybersecurity; IoT
+STU0032,Aarav Zaveri,CSBS3B011,Computer Science and Business Systems,3,6,B,stu0032@csbs-demo.invalid,Docker; JavaScript; AWS; Pandas,Computer Vision; Robotics
+STU0033,Vedant Gokhale,CSBS3C011,Computer Science and Business Systems,3,6,C,stu0033@csbs-demo.invalid,Spring Boot; Tableau; Pandas; Docker; JavaScript; Figma,Entrepreneurship; Machine Learning; Business Analytics
+STU0034,Gaurav Rane,CSBS3A012,Computer Science and Business Systems,3,6,A,stu0034@csbs-demo.invalid,TypeScript; Flutter; Git; PostgreSQL,Computer Vision; Web Development
+STU0035,Pooja Dalvi,CSBS3B012,Computer Science and Business Systems,3,6,B,stu0035@csbs-demo.invalid,Power BI; PostgreSQL; Tableau; TensorFlow,Cybersecurity; Machine Learning; Competitive Programming; UI/UX Design
+STU0036,Karthik Nene,CSBS3C012,Computer Science and Business Systems,3,6,C,stu0036@csbs-demo.invalid,Kubernetes; REST APIs; MongoDB,Natural Language Processing; Cybersecurity; Business Analytics; Open Source
+STU0037,Riya Thakur,CSBS3A013,Computer Science and Business Systems,3,6,A,stu0037@csbs-demo.invalid,Docker; PyTorch; C++; React; Pandas,Cybersecurity; Machine Learning; DevOps; Business Analytics
+STU0038,Indira Inamdar,CSBS3B013,Computer Science and Business Systems,3,6,B,stu0038@csbs-demo.invalid,PostgreSQL; scikit-learn; AWS; Linux; Arduino,Game Development; DevOps
+STU0039,Manav Lokhande,CSBS3C013,Computer Science and Business Systems,3,6,C,stu0039@csbs-demo.invalid,AWS; scikit-learn; TensorFlow; Node.js; Pandas; TypeScript,Business Analytics; Game Development
+STU0040,Riya Kamat,CSBS3A014,Computer Science and Business Systems,3,6,A,stu0040@csbs-demo.invalid,Pandas; C++; Docker; Tableau,Computer Vision; Game Development
+STU0041,Ananya Pawar,CSBS3B014,Computer Science and Business Systems,3,6,B,stu0041@csbs-demo.invalid,Python; Figma; Tableau,UI/UX Design; Game Development
+STU0042,Madhav Vartak,CSBS3C014,Computer Science and Business Systems,3,6,C,stu0042@csbs-demo.invalid,Tableau; Pandas; Linux; Python; Arduino; SQL,Game Development; Competitive Programming; Web Development
+STU0043,Hemant Rane,CSBS3A015,Computer Science and Business Systems,3,6,A,stu0043@csbs-demo.invalid,TensorFlow; ROS; C++; TypeScript; Flutter; React,Game Development; Cloud Computing; Cybersecurity
+STU0044,Neel Sapkal,CSBS3B015,Computer Science and Business Systems,3,6,B,stu0044@csbs-demo.invalid,Figma; SQL; Docker; C++; TensorFlow; Linux,Data Analytics; Cybersecurity
+STU0045,Harshita Mhatre,CSBS3C015,Computer Science and Business Systems,3,6,C,stu0045@csbs-demo.invalid,scikit-learn; Spring Boot; Tableau; Figma,Open Source; IoT; Cybersecurity; Cloud Computing
+STU0046,Hemant Hegde,CSBS3A016,Computer Science and Business Systems,3,6,A,stu0046@csbs-demo.invalid,Figma; Flutter; Pandas; TensorFlow,IoT; Competitive Programming; Data Analytics; Open Source
+STU0047,Deepika Iyer,CSBS3B016,Computer Science and Business Systems,3,6,B,stu0047@csbs-demo.invalid,JavaScript; Docker; Kubernetes; Figma; Node.js; Linux,Computer Vision; Natural Language Processing; Game Development
+STU0048,Kavya Vartak,CSBS3C016,Computer Science and Business Systems,3,6,C,stu0048@csbs-demo.invalid,Figma; REST APIs; scikit-learn; PyTorch; TensorFlow; TypeScript,Product Management; Competitive Programming; Cybersecurity
+STU0049,Esha Zaveri,CSBS3A017,Computer Science and Business Systems,3,6,A,stu0049@csbs-demo.invalid,TensorFlow; TypeScript; Pandas,Product Management; Robotics; DevOps
+STU0050,Zara Hegde,CSBS3B017,Computer Science and Business Systems,3,6,B,stu0050@csbs-demo.invalid,scikit-learn; Git; ROS,Web Development; Computer Vision; UI/UX Design; Business Analytics
+STU0051,Rhea Bhosale,CSBS3C017,Computer Science and Business Systems,3,6,C,stu0051@csbs-demo.invalid,Figma; MongoDB; React; Node.js; Git,Cloud Computing; Game Development; DevOps; Machine Learning
+STU0052,Raj Gokhale,CSBS3A018,Computer Science and Business Systems,3,6,A,stu0052@csbs-demo.invalid,React; REST APIs; SQL; Node.js; C++,Cybersecurity; Open Source; UI/UX Design; Game Development
+STU0053,Aryan Yadav,CSBS3B018,Computer Science and Business Systems,3,6,B,stu0053@csbs-demo.invalid,Flutter; React; PostgreSQL,Open Source; Game Development; Cloud Computing
+STU0054,Mahika Thakur,CSBS3C018,Computer Science and Business Systems,3,6,C,stu0054@csbs-demo.invalid,PostgreSQL; Tableau; scikit-learn; MongoDB,Open Source; UI/UX Design; Competitive Programming
+STU0055,Dhruv Mhatre,CSBS3A019,Computer Science and Business Systems,3,6,A,stu0055@csbs-demo.invalid,Node.js; PostgreSQL; SQL; Figma,Business Analytics; DevOps; Cybersecurity; Competitive Programming
+STU0056,Naina Phadke,CSBS3B019,Computer Science and Business Systems,3,6,B,stu0056@csbs-demo.invalid,ROS; Tableau; C++,Fintech; Cybersecurity; Natural Language Processing; Product Management
+STU0057,Raj Pawar,CSBS3C019,Computer Science and Business Systems,3,6,C,stu0057@csbs-demo.invalid,MongoDB; PyTorch; Power BI; Figma; TypeScript,Game Development; Cybersecurity; UI/UX Design; IoT
+STU0058,Shaurya Chavan,CSBS3A020,Computer Science and Business Systems,3,6,A,stu0058@csbs-demo.invalid,React; Linux; Figma; C++; Spring Boot; REST APIs,UI/UX Design; Product Management
+STU0059,Zara Salvi,CSBS3B020,Computer Science and Business Systems,3,6,B,stu0059@csbs-demo.invalid,SQL; TypeScript; React,Data Analytics; Cloud Computing; Open Source; IoT
+STU0060,Mitali Inamdar,CSBS3C020,Computer Science and Business Systems,3,6,C,stu0060@csbs-demo.invalid,Kubernetes; MongoDB; Node.js; PostgreSQL; Python; TypeScript,Cybersecurity; Natural Language Processing; Data Analytics
+STU0061,Simran Zaveri,CSBS3A021,Computer Science and Business Systems,3,6,A,stu0061@csbs-demo.invalid,Java; Git; MongoDB; Tableau,Machine Learning; Robotics; Open Source; Product Management
+STU0062,Bhavesh Lokhande,CSBS3B021,Computer Science and Business Systems,3,6,B,stu0062@csbs-demo.invalid,Arduino; Tableau; SQL; PostgreSQL; C++; AWS,DevOps; Data Analytics; Natural Language Processing
+STU0063,Mihir Deshmukh,CSBS3C021,Computer Science and Business Systems,3,6,C,stu0063@csbs-demo.invalid,Spring Boot; JavaScript; C++; TypeScript; Node.js,Computer Vision; Machine Learning; Entrepreneurship
+STU0064,Vedant Yadav,CSBS3A022,Computer Science and Business Systems,3,6,A,stu0064@csbs-demo.invalid,AWS; JavaScript; Flutter,Web Development; Data Analytics; Fintech
+STU0065,Bhavesh Thakur,CSBS3B022,Computer Science and Business Systems,3,6,B,stu0065@csbs-demo.invalid,Python; TypeScript; REST APIs,Natural Language Processing; Web Development
+STU0066,Tanvi Nene,CSBS3C022,Computer Science and Business Systems,3,6,C,stu0066@csbs-demo.invalid,Python; Node.js; scikit-learn,Computer Vision; Cybersecurity; IoT
+STU0067,Rudra Zaveri,CSBS3A023,Computer Science and Business Systems,3,6,A,stu0067@csbs-demo.invalid,Git; JavaScript; Flutter; TensorFlow; PyTorch,Competitive Programming; Open Source
+STU0068,Nisha Mehta,CSBS3B023,Computer Science and Business Systems,3,6,B,stu0068@csbs-demo.invalid,TensorFlow; Pandas; Node.js; ROS; Figma; MongoDB,Cybersecurity; Open Source; Cloud Computing
+STU0069,Sahil Oak,CSBS3C023,Computer Science and Business Systems,3,6,C,stu0069@csbs-demo.invalid,ROS; Node.js; REST APIs,Cybersecurity; Game Development; Web Development
+STU0070,Tanmay Agarwal,CSBS3A024,Computer Science and Business Systems,3,6,A,stu0070@csbs-demo.invalid,TensorFlow; REST APIs; Kubernetes,Fintech; IoT
+STU0071,Riya Iyer,CSBS3B024,Computer Science and Business Systems,3,6,B,stu0071@csbs-demo.invalid,MongoDB; Linux; React; Tableau; ROS,Game Development; Robotics; DevOps
+STU0072,Tanvi Engineer,CSBS3C024,Computer Science and Business Systems,3,6,C,stu0072@csbs-demo.invalid,Kubernetes; Figma; REST APIs; Node.js; MongoDB; Tableau,UI/UX Design; Data Analytics; Entrepreneurship
+STU0073,Neel Wagh,CSBS3A025,Computer Science and Business Systems,3,6,A,stu0073@csbs-demo.invalid,Kubernetes; React; Pandas; Tableau,Natural Language Processing; Business Analytics; Machine Learning; UI/UX Design
+STU0074,Devika Sapkal,CSBS3B025,Computer Science and Business Systems,3,6,B,stu0074@csbs-demo.invalid,PyTorch; scikit-learn; Python; C++,Web Development; Competitive Programming; UI/UX Design; IoT
+STU0075,Madhav Mhatre,CSBS3C025,Computer Science and Business Systems,3,6,C,stu0075@csbs-demo.invalid,Docker; JavaScript; Linux,Competitive Programming; Product Management; Cloud Computing; Machine Learning
+STU0076,Darshan Rane,CSBS3A026,Computer Science and Business Systems,3,6,A,stu0076@csbs-demo.invalid,Pandas; TypeScript; Arduino; JavaScript; PostgreSQL,Natural Language Processing; Business Analytics; Entrepreneurship; Fintech
+STU0077,Karthik Gokhale,CSBS3B026,Computer Science and Business Systems,3,6,B,stu0077@csbs-demo.invalid,Java; Tableau; Linux; Kubernetes; Git,Data Analytics; IoT
+STU0078,Varun Chitnis,CSBS3C026,Computer Science and Business Systems,3,6,C,stu0078@csbs-demo.invalid,MongoDB; TypeScript; C++; Node.js; TensorFlow,UI/UX Design; Open Source; Competitive Programming
+STU0079,Advait Rane,CSBS3A027,Computer Science and Business Systems,3,6,A,stu0079@csbs-demo.invalid,Pandas; scikit-learn; PostgreSQL,UI/UX Design; Machine Learning; Computer Vision
+STU0080,Aryan Nadkarni,CSBS3B027,Computer Science and Business Systems,3,6,B,stu0080@csbs-demo.invalid,TypeScript; ROS; Java; PyTorch,Game Development; Open Source; Natural Language Processing
+STU0081,Janhavi Tendulkar,CSBS3C027,Computer Science and Business Systems,3,6,C,stu0081@csbs-demo.invalid,SQL; Power BI; Linux,DevOps; Product Management
+STU0082,Hrishikesh Kamat,CSBS3A028,Computer Science and Business Systems,3,6,A,stu0082@csbs-demo.invalid,Power BI; Docker; TypeScript; Node.js; SQL; MongoDB,Open Source; Game Development; Fintech; Computer Vision
+STU0083,Kalyani Fernandes,CSBS3B028,Computer Science and Business Systems,3,6,B,stu0083@csbs-demo.invalid,scikit-learn; Git; Spring Boot; ROS; Linux; React,Fintech; Web Development; UI/UX Design
+STU0084,Komal Nene,CSBS3C028,Computer Science and Business Systems,3,6,C,stu0084@csbs-demo.invalid,AWS; Tableau; Node.js; PyTorch,Data Analytics; IoT; Cloud Computing
+STU0085,Lavanya Agarwal,CSBS3A029,Computer Science and Business Systems,3,6,A,stu0085@csbs-demo.invalid,SQL; PyTorch; TensorFlow; ROS; C++,Cloud Computing; Business Analytics; Game Development
+STU0086,Pranav Wagh,CSBS3B029,Computer Science and Business Systems,3,6,B,stu0086@csbs-demo.invalid,Tableau; AWS; Java; TensorFlow; Linux,Open Source; DevOps; Web Development; Natural Language Processing
+STU0087,Aarav Kulkarni,CSBS3C029,Computer Science and Business Systems,3,6,C,stu0087@csbs-demo.invalid,Spring Boot; PyTorch; TensorFlow; Git; React; Linux,UI/UX Design; Competitive Programming
+STU0088,Nikhil Sapkal,CSBS3A030,Computer Science and Business Systems,3,6,A,stu0088@csbs-demo.invalid,Power BI; Flutter; TypeScript; Spring Boot; React; Git,Data Analytics; Cloud Computing
+STU0089,Vaishnavi Oak,CSBS3B030,Computer Science and Business Systems,3,6,B,stu0089@csbs-demo.invalid,Linux; PyTorch; TensorFlow; Git; PostgreSQL,Natural Language Processing; Game Development
+STU0090,Ishaan Pawar,CSBS3C030,Computer Science and Business Systems,3,6,C,stu0090@csbs-demo.invalid,PyTorch; Power BI; scikit-learn; Java; Figma,Machine Learning; Robotics; Cybersecurity
+STU0091,Vedant Kulkarni,CSBS3A031,Computer Science and Business Systems,3,6,A,stu0091@csbs-demo.invalid,Power BI; TensorFlow; AWS; PostgreSQL; PyTorch; Linux,Cybersecurity; Product Management
+STU0092,Mahika Deshmukh,CSBS3B031,Computer Science and Business Systems,3,6,B,stu0092@csbs-demo.invalid,Node.js; Java; Python; scikit-learn,Machine Learning; Competitive Programming
+STU0093,Vedant Bhosale,CSBS3C031,Computer Science and Business Systems,3,6,C,stu0093@csbs-demo.invalid,Kubernetes; AWS; scikit-learn; Java; JavaScript; Pandas,Cybersecurity; UI/UX Design; Entrepreneurship
+STU0094,Vedant Oak,CSBS3A032,Computer Science and Business Systems,3,6,A,stu0094@csbs-demo.invalid,Kubernetes; Spring Boot; Docker; REST APIs; Linux,Natural Language Processing; Fintech; Machine Learning
+STU0095,Tanvi Chavan,CSBS3B032,Computer Science and Business Systems,3,6,B,stu0095@csbs-demo.invalid,Tableau; Figma; JavaScript; React,IoT; Web Development; Natural Language Processing; Competitive Programming
+STU0096,Samarth Vartak,CSBS3C032,Computer Science and Business Systems,3,6,C,stu0096@csbs-demo.invalid,Linux; Kubernetes; scikit-learn; Pandas; Figma; Docker,Computer Vision; Fintech; UI/UX Design; Open Source
+STU0097,Komal Pawar,CSBS3A033,Computer Science and Business Systems,3,6,A,stu0097@csbs-demo.invalid,Kubernetes; Node.js; AWS; Docker; scikit-learn; C++,Machine Learning; DevOps
+STU0098,Naina Oak,CSBS3B033,Computer Science and Business Systems,3,6,B,stu0098@csbs-demo.invalid,Docker; Pandas; Kubernetes; REST APIs,Business Analytics; Fintech; Product Management
+STU0099,Kabir Nadkarni,CSBS3C033,Computer Science and Business Systems,3,6,C,stu0099@csbs-demo.invalid,React; Pandas; TypeScript; TensorFlow,Cybersecurity; Competitive Programming; Natural Language Processing; Open Source
+STU0100,Riya Sapkal,CSBS3A034,Computer Science and Business Systems,3,6,A,stu0100@csbs-demo.invalid,Docker; Git; PyTorch; AWS; MongoDB; SQL,IoT; DevOps
+STU0101,Girish Agarwal,CSBS3B034,Computer Science and Business Systems,3,6,B,stu0101@csbs-demo.invalid,Node.js; C++; Figma; Git,Natural Language Processing; Game Development; Data Analytics
+STU0102,Vaishnavi Nadkarni,CSBS3C034,Computer Science and Business Systems,3,6,C,stu0102@csbs-demo.invalid,Linux; TypeScript; Kubernetes; Spring Boot; scikit-learn; Flutter,Entrepreneurship; Cybersecurity; Competitive Programming
+STU0103,Shreya Chitnis,CSBS3A035,Computer Science and Business Systems,3,6,A,stu0103@csbs-demo.invalid,PyTorch; Spring Boot; Flutter; Python; PostgreSQL,Natural Language Processing; Game Development
+STU0104,Naina Wagh,CSBS3B035,Computer Science and Business Systems,3,6,B,stu0104@csbs-demo.invalid,Arduino; React; TensorFlow; SQL; ROS; PyTorch,DevOps; Fintech
+STU0105,Rhea Hegde,CSBS3C035,Computer Science and Business Systems,3,6,C,stu0105@csbs-demo.invalid,Pandas; Linux; TensorFlow; Power BI,Data Analytics; Game Development; DevOps
+STU0106,Aditi Ranade,CSBS3A036,Computer Science and Business Systems,3,6,A,stu0106@csbs-demo.invalid,C++; Java; Python,Cloud Computing; Competitive Programming; Entrepreneurship
+STU0107,Ishaan Zaveri,CSBS3B036,Computer Science and Business Systems,3,6,B,stu0107@csbs-demo.invalid,scikit-learn; Java; Arduino; PostgreSQL; MongoDB,Open Source; DevOps; Competitive Programming
+STU0108,Vihaan Inamdar,CSBS3C036,Computer Science and Business Systems,3,6,C,stu0108@csbs-demo.invalid,Node.js; MongoDB; TypeScript; Power BI; Linux,Competitive Programming; Robotics
+STU0109,Tara Inamdar,CSBS3A037,Computer Science and Business Systems,3,6,A,stu0109@csbs-demo.invalid,C++; REST APIs; SQL; TypeScript,Computer Vision; Robotics; Business Analytics; Game Development
+STU0110,Harshita Lokhande,CSBS3B037,Computer Science and Business Systems,3,6,B,stu0110@csbs-demo.invalid,PostgreSQL; Docker; AWS; Node.js; Git,IoT; Fintech; Robotics; Product Management
+STU0111,Sanjana Hegde,CSBS3C037,Computer Science and Business Systems,3,6,C,stu0111@csbs-demo.invalid,Figma; AWS; MongoDB; Flutter; REST APIs; React,UI/UX Design; Computer Vision; Game Development; DevOps
+STU0112,Nandini Salvi,CSBS3A038,Computer Science and Business Systems,3,6,A,stu0112@csbs-demo.invalid,Power BI; TensorFlow; Pandas,Web Development; Cloud Computing
+STU0113,Pranav Salvi,CSBS3B038,Computer Science and Business Systems,3,6,B,stu0113@csbs-demo.invalid,MongoDB; C++; PyTorch; JavaScript; Linux,Machine Learning; Competitive Programming; DevOps
+STU0114,Vaishnavi Lokhande,CSBS3C038,Computer Science and Business Systems,3,6,C,stu0114@csbs-demo.invalid,Spring Boot; TypeScript; Figma; Node.js; React,Machine Learning; Game Development
+STU0115,Samarth Tendulkar,CSBS3A039,Computer Science and Business Systems,3,6,A,stu0115@csbs-demo.invalid,Figma; PostgreSQL; ROS,Natural Language Processing; Fintech
+STU0116,Kunal Inamdar,CSBS3B039,Computer Science and Business Systems,3,6,B,stu0116@csbs-demo.invalid,C++; Figma; AWS; TypeScript; Linux,Robotics; Product Management; Web Development
+STU0117,Tanmay Kamat,CSBS3C039,Computer Science and Business Systems,3,6,C,stu0117@csbs-demo.invalid,Linux; PostgreSQL; TensorFlow; scikit-learn; Pandas,Web Development; Fintech
+STU0118,Yash Deshmukh,CSBS3A040,Computer Science and Business Systems,3,6,A,stu0118@csbs-demo.invalid,Node.js; Docker; PostgreSQL; Git,Web Development; Robotics; Business Analytics
+STU0119,Tanmay Iyer,CSBS3B040,Computer Science and Business Systems,3,6,B,stu0119@csbs-demo.invalid,ROS; Kubernetes; Linux; Python,Business Analytics; Cybersecurity; Data Analytics; IoT
+STU0120,Tanmay Inamdar,CSBS3C040,Computer Science and Business Systems,3,6,C,stu0120@csbs-demo.invalid,Python; SQL; TypeScript; AWS,Cybersecurity; Open Source; Entrepreneurship
+STU0121,Om Joshi,CSBS3A041,Computer Science and Business Systems,3,6,A,stu0121@csbs-demo.invalid,Arduino; Kubernetes; ROS; PostgreSQL; Docker; Linux,Computer Vision; Business Analytics; DevOps; Open Source
+STU0122,Sanjana Vartak,CSBS3B041,Computer Science and Business Systems,3,6,B,stu0122@csbs-demo.invalid,REST APIs; Tableau; MongoDB; PostgreSQL; TensorFlow,Competitive Programming; Business Analytics
+STU0123,Ishaan Inamdar,CSBS3C041,Computer Science and Business Systems,3,6,C,stu0123@csbs-demo.invalid,AWS; Tableau; Java; Pandas; MongoDB; Node.js,Game Development; Cloud Computing; DevOps; Competitive Programming
+STU0124,Nisha Fernandes,CSBS3A042,Computer Science and Business Systems,3,6,A,stu0124@csbs-demo.invalid,SQL; Linux; Pandas; scikit-learn; PyTorch,Competitive Programming; Cybersecurity; IoT
+STU0125,Advait Fernandes,CSBS3B042,Computer Science and Business Systems,3,6,B,stu0125@csbs-demo.invalid,C++; Node.js; REST APIs; ROS; Figma; Flutter,UI/UX Design; Data Analytics; Fintech
+STU0126,Girish Rane,CSBS3C042,Computer Science and Business Systems,3,6,C,stu0126@csbs-demo.invalid,Flutter; Node.js; scikit-learn; Figma; Kubernetes; PostgreSQL,UI/UX Design; Business Analytics
+STU0127,Arjun Deshmukh,CSBS3A043,Computer Science and Business Systems,3,6,A,stu0127@csbs-demo.invalid,REST APIs; Python; Kubernetes; React; TensorFlow; TypeScript,Cybersecurity; Web Development; Game Development
+STU0128,Advait Gokhale,CSBS3B043,Computer Science and Business Systems,3,6,B,stu0128@csbs-demo.invalid,AWS; REST APIs; SQL; PostgreSQL; React; Tableau,Open Source; UI/UX Design; Product Management; Fintech
+STU0129,Varun Zaveri,CSBS3C043,Computer Science and Business Systems,3,6,C,stu0129@csbs-demo.invalid,C++; Spring Boot; TensorFlow; Tableau; AWS,Competitive Programming; Entrepreneurship; Fintech; DevOps
+STU0130,Vihaan Yadav,CSBS3A044,Computer Science and Business Systems,3,6,A,stu0130@csbs-demo.invalid,TypeScript; Java; Spring Boot; SQL,Competitive Programming; UI/UX Design; Open Source; Computer Vision
+STU0131,Girish Qureshi,CSBS3B044,Computer Science and Business Systems,3,6,B,stu0131@csbs-demo.invalid,React; Tableau; TensorFlow; REST APIs; Kubernetes; MongoDB,Robotics; Cybersecurity
+STU0132,Kabir Rane,CSBS3C044,Computer Science and Business Systems,3,6,C,stu0132@csbs-demo.invalid,Git; Node.js; Pandas,Cybersecurity; Open Source; Robotics; Fintech
+STU0133,Vaishnavi Sapkal,CSBS3A045,Computer Science and Business Systems,3,6,A,stu0133@csbs-demo.invalid,Spring Boot; Node.js; Linux; Kubernetes; C++; Java,Product Management; IoT; Game Development
+STU0134,Ananya Kulkarni,CSBS3B045,Computer Science and Business Systems,3,6,B,stu0134@csbs-demo.invalid,Figma; PostgreSQL; TypeScript; Spring Boot,Data Analytics; Robotics
+STU0135,Deepika Ranade,CSBS3C045,Computer Science and Business Systems,3,6,C,stu0135@csbs-demo.invalid,JavaScript; scikit-learn; Flutter; Arduino; Git; React,Product Management; Web Development
+STU0136,Mihir Gadre,CSBS3A046,Computer Science and Business Systems,3,6,A,stu0136@csbs-demo.invalid,Figma; C++; REST APIs; AWS,Fintech; Natural Language Processing; UI/UX Design
+STU0137,Kunal Salvi,CSBS3B046,Computer Science and Business Systems,3,6,B,stu0137@csbs-demo.invalid,Spring Boot; Docker; React; SQL; PostgreSQL; AWS,Machine Learning; Computer Vision
+STU0138,Neel Ranade,CSBS3C046,Computer Science and Business Systems,3,6,C,stu0138@csbs-demo.invalid,Flutter; Git; Spring Boot,IoT; Natural Language Processing; Computer Vision
+STU0139,Nikhil Phadke,CSBS3A047,Computer Science and Business Systems,3,6,A,stu0139@csbs-demo.invalid,Python; AWS; Spring Boot,Business Analytics; UI/UX Design
+STU0140,Om Kulkarni,CSBS3B047,Computer Science and Business Systems,3,6,B,stu0140@csbs-demo.invalid,Flutter; Python; PostgreSQL; REST APIs; React; C++,IoT; Cloud Computing
+STU0141,Anushka Pawar,CSBS3C047,Computer Science and Business Systems,3,6,C,stu0141@csbs-demo.invalid,scikit-learn; Node.js; JavaScript; Linux,Machine Learning; Competitive Programming
+STU0142,Anirudh Gadre,CSBS3A048,Computer Science and Business Systems,3,6,A,stu0142@csbs-demo.invalid,REST APIs; AWS; Kubernetes,Fintech; Computer Vision; Cybersecurity; Competitive Programming
+STU0143,Mahika Sapkal,CSBS3B048,Computer Science and Business Systems,3,6,B,stu0143@csbs-demo.invalid,Flutter; PyTorch; Docker; SQL; Tableau,DevOps; Robotics; Business Analytics; Data Analytics
+STU0144,Sahil Salvi,CSBS3C048,Computer Science and Business Systems,3,6,C,stu0144@csbs-demo.invalid,TensorFlow; ROS; Flutter,Natural Language Processing; UI/UX Design; Fintech
+STU0145,Nandini Wagh,CSBS3A049,Computer Science and Business Systems,3,6,A,stu0145@csbs-demo.invalid,JavaScript; Linux; scikit-learn; C++,IoT; DevOps
+STU0146,Uday Nene,CSBS3B049,Computer Science and Business Systems,3,6,B,stu0146@csbs-demo.invalid,PyTorch; Power BI; Docker; Tableau,Machine Learning; Business Analytics; Competitive Programming
+STU0147,Janhavi Bhandari,CSBS3C049,Computer Science and Business Systems,3,6,C,stu0147@csbs-demo.invalid,PostgreSQL; JavaScript; TypeScript; Flutter; Kubernetes,Robotics; Cloud Computing; Machine Learning; Product Management
+STU0148,Kunal Nene,CSBS3A050,Computer Science and Business Systems,3,6,A,stu0148@csbs-demo.invalid,Docker; Power BI; SQL; Java; scikit-learn,Computer Vision; Open Source
+STU0149,Yash Qureshi,CSBS3B050,Computer Science and Business Systems,3,6,B,stu0149@csbs-demo.invalid,MongoDB; Kubernetes; Figma; Spring Boot,Open Source; Competitive Programming; IoT
+STU0150,Aryan Agarwal,CSBS3C050,Computer Science and Business Systems,3,6,C,stu0150@csbs-demo.invalid,Tableau; PyTorch; React,Cybersecurity; DevOps; IoT
+STU0151,Dhruv Ranade,CSBS3A051,Computer Science and Business Systems,3,6,A,stu0151@csbs-demo.invalid,Tableau; TypeScript; Java; Node.js; React; ROS,Data Analytics; Cybersecurity; Computer Vision
+STU0152,Indira Nene,CSBS3B051,Computer Science and Business Systems,3,6,B,stu0152@csbs-demo.invalid,REST APIs; AWS; Spring Boot; PyTorch; React,Product Management; Cybersecurity
+STU0153,Arjun Mehta,CSBS3C051,Computer Science and Business Systems,3,6,C,stu0153@csbs-demo.invalid,Spring Boot; TypeScript; Power BI,Open Source; Competitive Programming
+STU0154,Aryan Kamat,CSBS3A052,Computer Science and Business Systems,3,6,A,stu0154@csbs-demo.invalid,Tableau; Spring Boot; TensorFlow,Web Development; Competitive Programming
+STU0155,Vedant Gadre,CSBS3B052,Computer Science and Business Systems,3,6,B,stu0155@csbs-demo.invalid,Figma; Power BI; Docker; Flutter; Java,Game Development; Robotics; DevOps; Business Analytics
+STU0156,Rahul Tendulkar,CSBS3C052,Computer Science and Business Systems,3,6,C,stu0156@csbs-demo.invalid,Arduino; scikit-learn; ROS; Flutter,Natural Language Processing; Cybersecurity; Computer Vision; Business Analytics
+STU0157,Dhruv Nadkarni,CSBS3A053,Computer Science and Business Systems,3,6,A,stu0157@csbs-demo.invalid,Flutter; Node.js; ROS; Docker; C++,Web Development; Cybersecurity; IoT; Natural Language Processing
+STU0158,Kabir Kulkarni,CSBS3B053,Computer Science and Business Systems,3,6,B,stu0158@csbs-demo.invalid,AWS; Node.js; Pandas; ROS; Spring Boot,Business Analytics; Game Development; Computer Vision
+STU0159,Hrishikesh Wagh,CSBS3C053,Computer Science and Business Systems,3,6,C,stu0159@csbs-demo.invalid,PyTorch; Docker; Figma; ROS; JavaScript; TypeScript,Natural Language Processing; Cloud Computing; Competitive Programming; Web Development
+STU0160,Rahul Chitnis,CSBS3A054,Computer Science and Business Systems,3,6,A,stu0160@csbs-demo.invalid,React; JavaScript; Arduino,Game Development; Open Source; UI/UX Design
+STU0161,Manav Pawar,CSBS3B054,Computer Science and Business Systems,3,6,B,stu0161@csbs-demo.invalid,Figma; Docker; PyTorch; ROS,Web Development; Game Development; Product Management
+STU0162,Anushka Lokhande,CSBS3C054,Computer Science and Business Systems,3,6,C,stu0162@csbs-demo.invalid,TensorFlow; Power BI; Pandas; Docker; scikit-learn; Arduino,Product Management; UI/UX Design; Cloud Computing
+STU0163,Sanjana Vaidya,CSBS3A055,Computer Science and Business Systems,3,6,A,stu0163@csbs-demo.invalid,AWS; Python; Tableau; SQL; PostgreSQL,Machine Learning; Natural Language Processing; Data Analytics; Web Development
+STU0164,Varun Pawar,CSBS3B055,Computer Science and Business Systems,3,6,B,stu0164@csbs-demo.invalid,Spring Boot; Arduino; Git,Computer Vision; Cybersecurity; Web Development; Competitive Programming
+STU0165,Rudra Sapkal,CSBS3C055,Computer Science and Business Systems,3,6,C,stu0165@csbs-demo.invalid,Linux; Flutter; MongoDB; PyTorch; React; ROS,UI/UX Design; DevOps
+STU0166,Lavanya Gadre,CSBS3A056,Computer Science and Business Systems,3,6,A,stu0166@csbs-demo.invalid,Power BI; scikit-learn; REST APIs; Pandas,Natural Language Processing; DevOps
+STU0167,Chaitanya Sapkal,CSBS3B056,Computer Science and Business Systems,3,6,B,stu0167@csbs-demo.invalid,TensorFlow; Node.js; PyTorch; Power BI,Computer Vision; UI/UX Design; Business Analytics
+STU0168,Arjun Vartak,CSBS3C056,Computer Science and Business Systems,3,6,C,stu0168@csbs-demo.invalid,REST APIs; scikit-learn; Docker; Kubernetes; Figma; TensorFlow,Computer Vision; Cybersecurity; Game Development
+STU0169,Kabir Salvi,CSBS3A057,Computer Science and Business Systems,3,6,A,stu0169@csbs-demo.invalid,ROS; Python; MongoDB; Java,Data Analytics; Natural Language Processing
+STU0170,Kabir Lokhande,CSBS3B057,Computer Science and Business Systems,3,6,B,stu0170@csbs-demo.invalid,Java; Arduino; React; SQL; Flutter,Business Analytics; Web Development; Open Source
+STU0171,Varun Kulkarni,CSBS3C057,Computer Science and Business Systems,3,6,C,stu0171@csbs-demo.invalid,MongoDB; C++; scikit-learn; PostgreSQL; REST APIs,Business Analytics; UI/UX Design; Fintech; Cybersecurity
+STU0172,Vaishnavi Deshmukh,CSBS3A058,Computer Science and Business Systems,3,6,A,stu0172@csbs-demo.invalid,ROS; C++; Linux; Figma; SQL; scikit-learn,Machine Learning; Computer Vision; Entrepreneurship
+STU0173,Vaishnavi Inamdar,CSBS3B058,Computer Science and Business Systems,3,6,B,stu0173@csbs-demo.invalid,Pandas; REST APIs; Node.js,Natural Language Processing; Data Analytics; Open Source
+STU0174,Avani Vaidya,CSBS3C058,Computer Science and Business Systems,3,6,C,stu0174@csbs-demo.invalid,Spring Boot; ROS; scikit-learn; JavaScript,DevOps; Product Management; IoT
+STU0175,Nikhil Agarwal,CSBS3A059,Computer Science and Business Systems,3,6,A,stu0175@csbs-demo.invalid,TensorFlow; REST APIs; Kubernetes; Node.js; Figma; PyTorch,DevOps; Machine Learning; Web Development; Robotics
+STU0176,Naina Mehta,CSBS3B059,Computer Science and Business Systems,3,6,B,stu0176@csbs-demo.invalid,ROS; Docker; Pandas; C++,Data Analytics; Cybersecurity
+STU0177,Girish Kamat,CSBS3C059,Computer Science and Business Systems,3,6,C,stu0177@csbs-demo.invalid,Pandas; TypeScript; MongoDB; Java,Natural Language Processing; UI/UX Design
+STU0178,Uday Qureshi,CSBS3A060,Computer Science and Business Systems,3,6,A,stu0178@csbs-demo.invalid,Linux; PostgreSQL; Kubernetes,Product Management; Computer Vision; Machine Learning; Entrepreneurship
+STU0179,Arjun Rane,CSBS3B060,Computer Science and Business Systems,3,6,B,stu0179@csbs-demo.invalid,Git; MongoDB; PostgreSQL; TypeScript; Java,Robotics; IoT
+STU0180,Vihaan Gadre,CSBS3C060,Computer Science and Business Systems,3,6,C,stu0180@csbs-demo.invalid,C++; Docker; TensorFlow; Pandas,Cybersecurity; Web Development
+STU0181,Vedant Wagh,CSBS3A061,Computer Science and Business Systems,3,6,A,stu0181@csbs-demo.invalid,C++; REST APIs; Java; Arduino,IoT; Web Development
+STU0182,Naina Rane,CSBS3B061,Computer Science and Business Systems,3,6,B,stu0182@csbs-demo.invalid,Tableau; C++; Spring Boot; scikit-learn; Git,Machine Learning; DevOps
+STU0183,Komal Vartak,CSBS3C061,Computer Science and Business Systems,3,6,C,stu0183@csbs-demo.invalid,AWS; ROS; JavaScript; Linux,Data Analytics; Entrepreneurship; Product Management; Robotics
+STU0184,Jatin Pawar,CSBS3A062,Computer Science and Business Systems,3,6,A,stu0184@csbs-demo.invalid,scikit-learn; TypeScript; Node.js; SQL; Arduino; Kubernetes,Entrepreneurship; Machine Learning; Open Source; Web Development
+STU0185,Ananya Bhosale,CSBS3B062,Computer Science and Business Systems,3,6,B,stu0185@csbs-demo.invalid,Kubernetes; C++; Spring Boot; TypeScript; Python,Computer Vision; Fintech; IoT; Product Management
+STU0186,Aryan Qureshi,CSBS3C062,Computer Science and Business Systems,3,6,C,stu0186@csbs-demo.invalid,TypeScript; REST APIs; Power BI; C++; Arduino,Product Management; IoT; UI/UX Design; Data Analytics
+STU0187,Neel Oak,CSBS3A063,Computer Science and Business Systems,3,6,A,stu0187@csbs-demo.invalid,Python; ROS; JavaScript,Cloud Computing; Competitive Programming; Open Source; Fintech
+STU0188,Sanjana Nene,CSBS3B063,Computer Science and Business Systems,3,6,B,stu0188@csbs-demo.invalid,Flutter; Arduino; PostgreSQL,Fintech; Natural Language Processing; Computer Vision; IoT
+STU0189,Vaishnavi Vaidya,CSBS3C063,Computer Science and Business Systems,3,6,C,stu0189@csbs-demo.invalid,MongoDB; Python; Kubernetes; PostgreSQL; Arduino; Flutter,Game Development; Cybersecurity
+STU0190,Pooja Bhandari,CSBS3A064,Computer Science and Business Systems,3,6,A,stu0190@csbs-demo.invalid,MongoDB; PyTorch; TypeScript; scikit-learn,DevOps; Robotics; Fintech; Business Analytics
+STU0191,Rhea Qureshi,CSBS3B064,Computer Science and Business Systems,3,6,B,stu0191@csbs-demo.invalid,Java; Node.js; SQL; Figma; PostgreSQL; React,Data Analytics; Cybersecurity; Competitive Programming
+STU0192,Sahil Kulkarni,CSBS3C064,Computer Science and Business Systems,3,6,C,stu0192@csbs-demo.invalid,Docker; JavaScript; Flutter; React; TensorFlow; Kubernetes,Entrepreneurship; Open Source
+STU0193,Sarthak Fernandes,CSBS3A065,Computer Science and Business Systems,3,6,A,stu0193@csbs-demo.invalid,MongoDB; AWS; Python; React; scikit-learn,Game Development; Web Development; Cloud Computing; Machine Learning
+STU0194,Hemant Upadhyay,CSBS3B065,Computer Science and Business Systems,3,6,B,stu0194@csbs-demo.invalid,React; Power BI; scikit-learn; Node.js,Entrepreneurship; Computer Vision
+STU0195,Siddharth Engineer,CSBS3C065,Computer Science and Business Systems,3,6,C,stu0195@csbs-demo.invalid,Git; TensorFlow; TypeScript; REST APIs; Tableau,Fintech; Entrepreneurship
+STU0196,Pranav Kulkarni,CSBS3A066,Computer Science and Business Systems,3,6,A,stu0196@csbs-demo.invalid,Power BI; Figma; Linux; PostgreSQL; MongoDB; TypeScript,Cloud Computing; Business Analytics
+STU0197,Karthik Bhandari,CSBS3B066,Computer Science and Business Systems,3,6,B,stu0197@csbs-demo.invalid,AWS; scikit-learn; SQL; Kubernetes; Node.js; TensorFlow,Data Analytics; Web Development
+STU0198,Nisha Lokhande,CSBS3C066,Computer Science and Business Systems,3,6,C,stu0198@csbs-demo.invalid,JavaScript; Tableau; AWS; Git,Robotics; DevOps
+STU0199,Varun Nadkarni,CSBS3A067,Computer Science and Business Systems,3,6,A,stu0199@csbs-demo.invalid,Python; Pandas; MongoDB; Kubernetes,UI/UX Design; DevOps; Computer Vision; Web Development
+STU0200,Tanmay Gokhale,CSBS3B067,Computer Science and Business Systems,3,6,B,stu0200@csbs-demo.invalid,Java; Node.js; Python; Arduino,Open Source; Natural Language Processing
+STU0201,Manav Kamat,CSBS3C067,Computer Science and Business Systems,3,6,C,stu0201@csbs-demo.invalid,PyTorch; JavaScript; Spring Boot,Competitive Programming; Natural Language Processing; Business Analytics; Product Management
+STU0202,Shaurya Nene,CSBS3A068,Computer Science and Business Systems,3,6,A,stu0202@csbs-demo.invalid,Docker; Pandas; Tableau; Spring Boot,Game Development; Computer Vision; Competitive Programming
+STU0203,Bhavesh Chavan,CSBS3B068,Computer Science and Business Systems,3,6,B,stu0203@csbs-demo.invalid,JavaScript; PostgreSQL; Java; Arduino; Git; Tableau,Robotics; Cybersecurity; Entrepreneurship; Product Management
+STU0204,Kalyani Pawar,CSBS3C068,Computer Science and Business Systems,3,6,C,stu0204@csbs-demo.invalid,Docker; Figma; Spring Boot; JavaScript,Data Analytics; UI/UX Design; Competitive Programming; Web Development
+STU0205,Riya Dalvi,CSBS3A069,Computer Science and Business Systems,3,6,A,stu0205@csbs-demo.invalid,JavaScript; Figma; TypeScript; ROS; AWS,Natural Language Processing; Machine Learning; Computer Vision
+STU0206,Dhruv Hegde,CSBS3B069,Computer Science and Business Systems,3,6,B,stu0206@csbs-demo.invalid,Pandas; AWS; SQL,Robotics; Cybersecurity; DevOps
+STU0207,Aditi Mehta,CSBS3C069,Computer Science and Business Systems,3,6,C,stu0207@csbs-demo.invalid,React; PostgreSQL; Spring Boot; scikit-learn,Fintech; Game Development
+STU0208,Kabir Nene,CSBS3A070,Computer Science and Business Systems,3,6,A,stu0208@csbs-demo.invalid,scikit-learn; Spring Boot; Figma; PyTorch,Product Management; Cloud Computing
+STU0209,Devika Wagh,CSBS3B070,Computer Science and Business Systems,3,6,B,stu0209@csbs-demo.invalid,Arduino; Flutter; Python; Git; PyTorch; scikit-learn,UI/UX Design; Robotics; Data Analytics
+STU0210,Komal Joshi,CSBS3C070,Computer Science and Business Systems,3,6,C,stu0210@csbs-demo.invalid,Docker; Pandas; Node.js,IoT; Fintech; DevOps; Game Development
+STU0211,Raj Nadkarni,CSBS3A071,Computer Science and Business Systems,3,6,A,stu0211@csbs-demo.invalid,Flutter; Arduino; C++; Power BI; AWS; Spring Boot,Cloud Computing; Fintech; Cybersecurity; Computer Vision
+STU0212,Neel Bhandari,CSBS3B071,Computer Science and Business Systems,3,6,B,stu0212@csbs-demo.invalid,React; PyTorch; MongoDB,Data Analytics; Computer Vision; Entrepreneurship; Game Development
+STU0213,Kabir Inamdar,CSBS3C071,Computer Science and Business Systems,3,6,C,stu0213@csbs-demo.invalid,REST APIs; Spring Boot; Python; JavaScript,Entrepreneurship; Competitive Programming
+STU0214,Zara Rane,CSBS3A072,Computer Science and Business Systems,3,6,A,stu0214@csbs-demo.invalid,Flutter; TypeScript; Python; Spring Boot,Competitive Programming; Data Analytics; Cybersecurity
+STU0215,Gaurav Oak,CSBS3B072,Computer Science and Business Systems,3,6,B,stu0215@csbs-demo.invalid,C++; PyTorch; Node.js; MongoDB; Docker,Computer Vision; IoT
+STU0216,Samarth Dalvi,CSBS3C072,Computer Science and Business Systems,3,6,C,stu0216@csbs-demo.invalid,MongoDB; AWS; Node.js; ROS; Flutter; PostgreSQL,Computer Vision; Open Source; UI/UX Design
+STU0217,Deepika Nadkarni,CSBS3A073,Computer Science and Business Systems,3,6,A,stu0217@csbs-demo.invalid,PostgreSQL; scikit-learn; SQL; Java,DevOps; Game Development
+STU0218,Chaitanya Kamat,CSBS3B073,Computer Science and Business Systems,3,6,B,stu0218@csbs-demo.invalid,Tableau; REST APIs; TensorFlow; Pandas; JavaScript,Entrepreneurship; Natural Language Processing; UI/UX Design
+STU0219,Sanjana Inamdar,CSBS3C073,Computer Science and Business Systems,3,6,C,stu0219@csbs-demo.invalid,JavaScript; TensorFlow; Kubernetes; Java,Business Analytics; IoT; Cloud Computing; Machine Learning
+STU0220,Girish Deshmukh,CSBS3A074,Computer Science and Business Systems,3,6,A,stu0220@csbs-demo.invalid,Kubernetes; SQL; Node.js,Game Development; Data Analytics
+STU0221,Vaishnavi Thakur,CSBS3B074,Computer Science and Business Systems,3,6,B,stu0221@csbs-demo.invalid,scikit-learn; Flutter; PostgreSQL; Java,Data Analytics; Fintech; Business Analytics; Machine Learning
+STU0222,Mitali Ranade,CSBS3C074,Computer Science and Business Systems,3,6,C,stu0222@csbs-demo.invalid,scikit-learn; MongoDB; Power BI; TypeScript; SQL; ROS,Data Analytics; Web Development
+STU0223,Rhea Zaveri,CSBS3A075,Computer Science and Business Systems,3,6,A,stu0223@csbs-demo.invalid,Flutter; Kubernetes; AWS,Fintech; Machine Learning
+STU0224,Sarthak Vartak,CSBS3B075,Computer Science and Business Systems,3,6,B,stu0224@csbs-demo.invalid,scikit-learn; Node.js; React,Cybersecurity; Competitive Programming; Data Analytics
+STU0225,Sarthak Salvi,CSBS3C075,Computer Science and Business Systems,3,6,C,stu0225@csbs-demo.invalid,AWS; Power BI; PostgreSQL,Machine Learning; Robotics; Natural Language Processing
+STU0226,Pranav Kamat,CSBS3A076,Computer Science and Business Systems,3,6,A,stu0226@csbs-demo.invalid,Kubernetes; Java; Pandas,IoT; UI/UX Design
+STU0227,Sanjana Bhosale,CSBS3B076,Computer Science and Business Systems,3,6,B,stu0227@csbs-demo.invalid,Arduino; Java; TensorFlow; scikit-learn; Flutter,Game Development; Data Analytics; UI/UX Design
+STU0228,Kunal Bhosale,CSBS3C076,Computer Science and Business Systems,3,6,C,stu0228@csbs-demo.invalid,Java; MongoDB; Power BI; TensorFlow; Flutter,Entrepreneurship; Business Analytics; Product Management; Game Development
+STU0229,Mahika Nadkarni,CSBS3A077,Computer Science and Business Systems,3,6,A,stu0229@csbs-demo.invalid,REST APIs; ROS; scikit-learn; JavaScript; Figma; SQL,Robotics; Fintech; Machine Learning; UI/UX Design
+STU0230,Varun Fernandes,CSBS3B077,Computer Science and Business Systems,3,6,B,stu0230@csbs-demo.invalid,Tableau; AWS; PostgreSQL; MongoDB,Business Analytics; Robotics
+STU0231,Saanvi Lokhande,CSBS3C077,Computer Science and Business Systems,3,6,C,stu0231@csbs-demo.invalid,Spring Boot; Figma; Kubernetes; Node.js; Tableau; Pandas,Robotics; DevOps
+STU0232,Esha Chitnis,CSBS3A078,Computer Science and Business Systems,3,6,A,stu0232@csbs-demo.invalid,Java; Git; React; PostgreSQL; Pandas,Web Development; Robotics
+STU0233,Tanmay Gadre,CSBS3B078,Computer Science and Business Systems,3,6,B,stu0233@csbs-demo.invalid,Figma; Docker; ROS,Competitive Programming; IoT; UI/UX Design; DevOps
+STU0234,Manav Chitnis,CSBS3C078,Computer Science and Business Systems,3,6,C,stu0234@csbs-demo.invalid,TensorFlow; TypeScript; Flutter; Kubernetes; PostgreSQL,Computer Vision; Web Development; Competitive Programming
+STU0235,Vihaan Zaveri,CSBS3A079,Computer Science and Business Systems,3,6,A,stu0235@csbs-demo.invalid,Figma; Node.js; SQL; ROS; PyTorch; TypeScript,Fintech; Game Development; Natural Language Processing
+STU0236,Ira Agarwal,CSBS3B079,Computer Science and Business Systems,3,6,B,stu0236@csbs-demo.invalid,Git; REST APIs; Figma; Docker,Entrepreneurship; IoT
+STU0237,Jatin Lokhande,CSBS3C079,Computer Science and Business Systems,3,6,C,stu0237@csbs-demo.invalid,REST APIs; Pandas; TypeScript; TensorFlow,Machine Learning; Fintech; Game Development; Natural Language Processing
+STU0238,Ishaan Nene,CSBS3A080,Computer Science and Business Systems,3,6,A,stu0238@csbs-demo.invalid,Pandas; Linux; scikit-learn; Docker; TypeScript,DevOps; Entrepreneurship; Web Development; Fintech
+STU0239,Kalyani Mehta,CSBS3B080,Computer Science and Business Systems,3,6,B,stu0239@csbs-demo.invalid,PyTorch; Power BI; Pandas; Arduino; Kubernetes,Product Management; Machine Learning
+STU0240,Raj Chitnis,CSBS3C080,Computer Science and Business Systems,3,6,C,stu0240@csbs-demo.invalid,ROS; MongoDB; Java; Power BI; Arduino; React,Open Source; Natural Language Processing; Computer Vision
+STU0241,Kavya Ranade,CSBS3A081,Computer Science and Business Systems,3,6,A,stu0241@csbs-demo.invalid,MongoDB; scikit-learn; Git; Spring Boot,UI/UX Design; Data Analytics; Fintech; Computer Vision
+STU0242,Anushka Iyer,CSBS3B081,Computer Science and Business Systems,3,6,B,stu0242@csbs-demo.invalid,PostgreSQL; Power BI; AWS,Game Development; Business Analytics
+STU0243,Varun Vaidya,CSBS3C081,Computer Science and Business Systems,3,6,C,stu0243@csbs-demo.invalid,SQL; MongoDB; C++; Figma,Web Development; Cloud Computing; Robotics
+STU0244,Siddharth Rane,CSBS3A082,Computer Science and Business Systems,3,6,A,stu0244@csbs-demo.invalid,scikit-learn; Figma; REST APIs,Game Development; Open Source
+STU0245,Chaitanya Oak,CSBS3B082,Computer Science and Business Systems,3,6,B,stu0245@csbs-demo.invalid,Flutter; Docker; Tableau; Spring Boot; PostgreSQL,Computer Vision; Game Development; Business Analytics
+STU0246,Esha Agarwal,CSBS3C082,Computer Science and Business Systems,3,6,C,stu0246@csbs-demo.invalid,Pandas; Python; MongoDB; Spring Boot; React,Machine Learning; UI/UX Design; Computer Vision
+STU0247,Vedant Chavan,CSBS3A083,Computer Science and Business Systems,3,6,A,stu0247@csbs-demo.invalid,PyTorch; Spring Boot; Git,Open Source; Cybersecurity; Robotics
+STU0248,Sanjana Gokhale,CSBS3B083,Computer Science and Business Systems,3,6,B,stu0248@csbs-demo.invalid,REST APIs; Python; Power BI,Cloud Computing; Fintech; Business Analytics; Entrepreneurship
+STU0249,Uday Gokhale,CSBS3C083,Computer Science and Business Systems,3,6,C,stu0249@csbs-demo.invalid,MongoDB; Flutter; PyTorch; Linux,Cloud Computing; Business Analytics
+STU0250,Tanvi Rane,CSBS3A084,Computer Science and Business Systems,3,6,A,stu0250@csbs-demo.invalid,React; AWS; JavaScript,Cybersecurity; Web Development

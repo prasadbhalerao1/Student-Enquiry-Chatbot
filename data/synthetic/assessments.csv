@@ -1,0 +1,61 @@
+assessment_id,subject_code,title,assessment_type,max_marks,assessment_date,weightage
+ASM0001,ARM3201L,Practical Evaluation I,Practical Evaluation,25,2026-01-20,0.3
+ASM0002,ARM3201L,Practical Evaluation II,Practical Evaluation,25,2026-02-11,0.3
+ASM0003,ARM3201L,Lab Continuous Assessment,Lab Assessment,20,2026-02-26,0.2
+ASM0004,ARM3201L,Mini Project Demonstration,Project,25,2026-03-20,0.1
+ASM0005,ARM3201L,Seminar Presentation,Seminar,10,2026-04-02,0.1
+ASM0006,ARM3201T,Internal Examination I,Internal Exam,30,2026-01-20,0.3
+ASM0007,ARM3201T,Internal Examination II,Internal Exam,30,2026-02-09,0.3
+ASM0008,ARM3201T,Unit Quiz,Quiz,10,2026-02-25,0.1
+ASM0009,ARM3201T,Technical Assignment,Technical Assignment,20,2026-03-15,0.2
+ASM0010,ARM3201T,Course Project,Project,20,2026-04-03,0.1
+ASM0011,CB3201L,Practical Evaluation I,Practical Evaluation,25,2026-01-21,0.3
+ASM0012,CB3201L,Practical Evaluation II,Practical Evaluation,25,2026-02-12,0.3
+ASM0013,CB3201L,Lab Continuous Assessment,Lab Assessment,20,2026-03-02,0.2
+ASM0014,CB3201L,Mini Project Demonstration,Project,25,2026-03-19,0.1
+ASM0015,CB3201L,Seminar Presentation,Seminar,10,2026-04-02,0.1
+ASM0016,CB3201T,Internal Examination I,Internal Exam,30,2026-01-25,0.3
+ASM0017,CB3201T,Internal Examination II,Internal Exam,30,2026-02-10,0.3
+ASM0018,CB3201T,Unit Quiz,Quiz,10,2026-03-01,0.1
+ASM0019,CB3201T,Technical Assignment,Technical Assignment,20,2026-03-20,0.2
+ASM0020,CB3201T,Course Project,Project,20,2026-04-06,0.1
+ASM0021,CB3202L,Practical Evaluation I,Practical Evaluation,25,2026-01-25,0.3
+ASM0022,CB3202L,Practical Evaluation II,Practical Evaluation,25,2026-02-12,0.3
+ASM0023,CB3202L,Lab Continuous Assessment,Lab Assessment,20,2026-02-28,0.2
+ASM0024,CB3202L,Mini Project Demonstration,Project,25,2026-03-20,0.1
+ASM0025,CB3202L,Seminar Presentation,Seminar,10,2026-04-02,0.1
+ASM0026,CB3202T,Internal Examination I,Internal Exam,30,2026-01-23,0.3
+ASM0027,CB3202T,Internal Examination II,Internal Exam,30,2026-02-08,0.3
+ASM0028,CB3202T,Unit Quiz,Quiz,10,2026-02-26,0.1
+ASM0029,CB3202T,Technical Assignment,Technical Assignment,20,2026-03-17,0.2
+ASM0030,CB3202T,Course Project,Project,20,2026-04-02,0.1
+ASM0031,CB3203L-A,Practical Evaluation I,Practical Evaluation,25,2026-01-25,0.3
+ASM0032,CB3203L-A,Practical Evaluation II,Practical Evaluation,25,2026-02-08,0.3
+ASM0033,CB3203L-A,Lab Continuous Assessment,Lab Assessment,20,2026-02-28,0.2
+ASM0034,CB3203L-A,Mini Project Demonstration,Project,25,2026-03-17,0.1
+ASM0035,CB3203L-A,Seminar Presentation,Seminar,10,2026-04-02,0.1
+ASM0036,CB3203T-A,Internal Examination I,Internal Exam,30,2026-01-25,0.3
+ASM0037,CB3203T-A,Internal Examination II,Internal Exam,30,2026-02-07,0.3
+ASM0038,CB3203T-A,Unit Quiz,Quiz,10,2026-02-27,0.1
+ASM0039,CB3203T-A,Technical Assignment,Technical Assignment,20,2026-03-15,0.2
+ASM0040,CB3203T-A,Course Project,Project,20,2026-04-05,0.1
+ASM0041,CB3204L,Practical Evaluation I,Practical Evaluation,25,2026-01-22,0.3
+ASM0042,CB3204L,Practical Evaluation II,Practical Evaluation,25,2026-02-07,0.3
+ASM0043,CB3204L,Lab Continuous Assessment,Lab Assessment,20,2026-02-28,0.2
+ASM0044,CB3204L,Mini Project Demonstration,Project,25,2026-03-17,0.1
+ASM0045,CB3204L,Seminar Presentation,Seminar,10,2026-04-07,0.1
+ASM0046,CB3205L,Practical Evaluation I,Practical Evaluation,25,2026-01-22,0.3
+ASM0047,CB3205L,Practical Evaluation II,Practical Evaluation,25,2026-02-08,0.3
+ASM0048,CB3205L,Lab Continuous Assessment,Lab Assessment,20,2026-03-02,0.2
+ASM0049,CB3205L,Mini Project Demonstration,Project,25,2026-03-16,0.1
+ASM0050,CB3205L,Seminar Presentation,Seminar,10,2026-04-03,0.1
+ASM0051,CB3206L,Practical Evaluation I,Practical Evaluation,25,2026-01-21,0.3
+ASM0052,CB3206L,Practical Evaluation II,Practical Evaluation,25,2026-02-10,0.3
+ASM0053,CB3206L,Lab Continuous Assessment,Lab Assessment,20,2026-03-02,0.2
+ASM0054,CB3206L,Mini Project Demonstration,Project,25,2026-03-18,0.1
+ASM0055,CB3206L,Seminar Presentation,Seminar,10,2026-04-07,0.1
+ASM0056,HSO3203T-F,Internal Examination I,Internal Exam,30,2026-01-22,0.3
+ASM0057,HSO3203T-F,Internal Examination II,Internal Exam,30,2026-02-10,0.3
+ASM0058,HSO3203T-F,Unit Quiz,Quiz,10,2026-03-02,0.1
+ASM0059,HSO3203T-F,Technical Assignment,Technical Assignment,20,2026-03-19,0.2
+ASM0060,HSO3203T-F,Course Project,Project,20,2026-04-07,0.1

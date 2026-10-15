@@ -1,0 +1,26 @@
+activity_id,title,category,description
+ACT001,CSBS Coding Club,Technical Club,Weekly problem-solving and peer code review sessions.
+ACT002,InnovateHack 24-Hour Hackathon,Hackathon,Campus-wide overnight product build competition.
+ACT003,National Collegiate Hackathon,Hackathon,Inter-college hackathon on applied AI themes.
+ACT004,Weekly Competitive Programming Ladder,Coding Competition,Rated contest ladder run by the department.
+ACT005,DataSprint Analytics Challenge,Coding Competition,Dataset modelling contest judged on held-out scores.
+ACT006,Cloud Fundamentals Workshop,Workshop,Hands-on workshop covering cloud deployment basics.
+ACT007,Robotics Build Workshop,Workshop,Microcontroller and actuator prototyping sessions.
+ACT008,Industry Seminar Series,Seminar,Guest lectures from visiting industry practitioners.
+ACT009,Research Paper Reading Group,Seminar,Fortnightly discussion of recent conference papers.
+ACT010,Inter-Department Cricket Tournament,Sports,Annual inter-department cricket fixture.
+ACT011,Campus Athletics Meet,Sports,Track and field events across the institute.
+ACT012,Basketball Institute League,Sports,Season-long institute basketball league.
+ACT013,Rural Digital Literacy Drive,Volunteering,Volunteer-led basic computer literacy sessions.
+ACT014,Blood Donation Camp,Volunteering,Organising and assisting the campus donation camp.
+ACT015,Campus Sustainability Initiative,Volunteering,Waste segregation and plantation activities.
+ACT016,Annual Cultural Festival,Cultural,Multi-day institute cultural festival.
+ACT017,Dramatics Society Production,Cultural,Student-written and student-performed stage production.
+ACT018,Music and Battle of Bands,Cultural,Inter-college band and solo music competition.
+ACT019,Final Year Project Exhibition,Project Exhibition,Public demonstration of student project work.
+ACT020,Technical Poster Presentation,Project Exhibition,Poster session on ongoing technical work.
+ACT021,Student Council Representation,Student Leadership,Elected representation on the student council.
+ACT022,Class Representative Duties,Student Leadership,Liaison between the class and faculty members.
+ACT023,Technical Fest Organising Committee,Student Leadership,Coordinating logistics for the annual technical fest.
+ACT024,Entrepreneurship Cell,Technical Club,"Startup mentoring, pitch practice and demo days."
+ACT025,Open Source Contribution Program,Technical Club,Mentored contributions to open source projects.

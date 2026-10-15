@@ -1,0 +1,37 @@
+assignment_id,subject_code,title,description,assigned_date,due_date,max_marks
+ASG0001,ARM3201L,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-06,2026-02-16,10
+ASG0002,ARM3201L,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-02,2026-03-16,20
+ASG0003,ARM3201L,Mini Task 3,Short applied task building on the lab sessions.,2026-04-02,2026-04-22,10
+ASG0004,ARM3201T,Problem Set 1,Worked problem set covering the current unit.,2026-02-02,2026-02-15,10
+ASG0005,ARM3201T,Case Study Analysis 2,Short written analysis of a supplied case study.,2026-03-06,2026-03-22,10
+ASG0006,ARM3201T,Implementation Exercise 3,Small implementation task with a written summary.,2026-04-03,2026-04-18,10
+ASG0007,CB3201L,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-03,2026-02-23,10
+ASG0008,CB3201L,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-03,2026-03-22,20
+ASG0009,CB3201L,Mini Task 3,Short applied task building on the lab sessions.,2026-03-30,2026-04-11,10
+ASG0010,CB3201T,Problem Set 1,Worked problem set covering the current unit.,2026-02-05,2026-02-19,20
+ASG0011,CB3201T,Case Study Analysis 2,Short written analysis of a supplied case study.,2026-03-05,2026-03-17,20
+ASG0012,CB3201T,Implementation Exercise 3,Small implementation task with a written summary.,2026-04-03,2026-04-20,20
+ASG0013,CB3202L,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-02,2026-02-15,10
+ASG0014,CB3202L,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-02,2026-03-21,20
+ASG0015,CB3202L,Mini Task 3,Short applied task building on the lab sessions.,2026-04-02,2026-04-16,10
+ASG0016,CB3202T,Problem Set 1,Worked problem set covering the current unit.,2026-02-03,2026-02-17,20
+ASG0017,CB3202T,Case Study Analysis 2,Short written analysis of a supplied case study.,2026-03-05,2026-03-24,10
+ASG0018,CB3202T,Implementation Exercise 3,Small implementation task with a written summary.,2026-04-01,2026-04-22,10
+ASG0019,CB3203L-A,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-03,2026-02-17,15
+ASG0020,CB3203L-A,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-05,2026-03-24,20
+ASG0021,CB3203L-A,Mini Task 3,Short applied task building on the lab sessions.,2026-04-03,2026-04-24,20
+ASG0022,CB3203T-A,Problem Set 1,Worked problem set covering the current unit.,2026-02-06,2026-02-25,10
+ASG0023,CB3203T-A,Case Study Analysis 2,Short written analysis of a supplied case study.,2026-03-06,2026-03-22,10
+ASG0024,CB3203T-A,Implementation Exercise 3,Small implementation task with a written summary.,2026-04-03,2026-04-23,20
+ASG0025,CB3204L,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-02,2026-02-21,15
+ASG0026,CB3204L,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-04,2026-03-18,10
+ASG0027,CB3204L,Mini Task 3,Short applied task building on the lab sessions.,2026-04-03,2026-04-24,20
+ASG0028,CB3205L,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-03,2026-02-18,10
+ASG0029,CB3205L,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-03,2026-03-23,10
+ASG0030,CB3205L,Mini Task 3,Short applied task building on the lab sessions.,2026-04-03,2026-04-24,15
+ASG0031,CB3206L,Lab Record Submission 1,Consolidated write-up of completed lab exercises.,2026-02-06,2026-02-24,10
+ASG0032,CB3206L,Practical Exercise 2,Guided practical task completed outside lab hours.,2026-03-02,2026-03-19,10
+ASG0033,CB3206L,Mini Task 3,Short applied task building on the lab sessions.,2026-04-01,2026-04-13,15
+ASG0034,HSO3203T-F,Problem Set 1,Worked problem set covering the current unit.,2026-02-03,2026-02-14,15
+ASG0035,HSO3203T-F,Case Study Analysis 2,Short written analysis of a supplied case study.,2026-03-04,2026-03-14,20
+ASG0036,HSO3203T-F,Implementation Exercise 3,Small implementation task with a written summary.,2026-03-31,2026-04-14,15
