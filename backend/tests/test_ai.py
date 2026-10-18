@@ -252,14 +252,59 @@ class TestToolCorrectness:
 
     def test_overdue_definition_is_returned_with_the_data(self, alpha_tools):
         r = alpha_tools["get_assignment_submission_summary"].func(overdue_only=True)
-        assert "not overdue" in r["definition"]
-        assert r["returned_count"] == 1
+        assert "NOT overdue" in r["definition"]
+        assert r["total_overdue_records"] == 1
 
     def test_missing_marks_note_accompanies_results(self, alpha_tools):
         r = alpha_tools["get_students_below_marks_threshold"].func(
             subject_code="CB3202T", threshold_percentage=60,
         )
         assert "not zeroed" in r["note"]
+
+    def test_low_attendance_reports_totals_not_list_length(self, alpha_tools):
+        """A truncated list must never be the source of a stated count.
+
+        Regression test: the tool previously returned only `returned_count`
+        (the sample size), and the model reported that as the number of
+        affected students.
+        """
+        r = alpha_tools["get_low_attendance_students"].func(None, None, 1)
+        assert r["showing_count"] == 1
+        # Two records are below threshold in the fixture department.
+        assert r["total_matching_records"] == 2
+        assert r["distinct_students_affected"] == 2
+        assert r["truncated"] is True
+        assert "total_matching_records" in r["note"]
+
+    def test_distinct_students_differs_from_record_count(self, db_session,
+                                                         alpha_principal):
+        """One student below threshold in two subjects is 2 records, 1 person."""
+        from app.models import Attendance
+
+        # STU0003 is already below in CB3202T (62.5%). Push them below in
+        # CB3202L too, so ONE person accounts for TWO records.
+        row = (
+            db_session.query(Attendance)
+            .filter_by(student_id="STU0003", subject_code="CB3202L")
+            .one()
+        )
+        row.classes_attended = 6  # 6/24 = 25%
+        db_session.commit()
+
+        tools = {
+            t.name: t
+            for t in build_tools(db_session, alpha_principal, 75.0, today=TODAY)
+        }
+        r = tools["get_low_attendance_students"].func(None, None, 40)
+        assert r["total_matching_records"] > r["distinct_students_affected"]
+
+    def test_overdue_reports_totals(self, alpha_tools):
+        r = alpha_tools["get_assignment_submission_summary"].func(
+            overdue_only=True
+        )
+        assert "total_overdue_records" in r
+        assert "distinct_students_affected" in r
+        assert r["total_overdue_records"] == 1
 
     def test_truncation_is_disclosed(self, alpha_tools):
         r = alpha_tools["get_subject_performance_summary"].func(

@@ -258,10 +258,13 @@ def low_attendance_students(
     db: Session,
     subject_codes: Sequence[str],
     threshold: float,
-    *,
-    limit: int = 25,
 ) -> list[dict]:
-    """Students below `threshold` across the given (already authorized) subjects."""
+    """ALL student-subject records below `threshold`, worst first.
+
+    Returns the complete list. Callers that need a shorter list truncate it
+    themselves AND report the full count, so a reader is never shown a
+    truncated list without being told how many records actually matched.
+    """
     rows = db.execute(
         select(
             Student.student_id,
@@ -294,7 +297,7 @@ def low_attendance_students(
             ),
         })
     out.sort(key=lambda r: r["attendance_percentage"])
-    return out[:limit]
+    return out
 
 
 def student_attendance(
@@ -474,8 +477,15 @@ def subject_performance_summary(db: Session, subject_code: str) -> dict:
 
 
 def students_below_marks_threshold(
-    db: Session, subject_code: str, threshold_percentage: float, *, limit: int = 50
+    db: Session, subject_code: str, threshold_percentage: float
 ) -> list[dict]:
+    """ALL students scoring below the threshold, worst first.
+
+    Returns the complete list; callers truncate for display AND report the
+    full count, so a reader is never shown a sample without being told the
+    total. Students with no evaluated work are excluded rather than treated
+    as scoring zero.
+    """
     summary = subject_performance_summary(db, subject_code)
     out = [
         s for s in summary["students"]
@@ -483,7 +493,7 @@ def students_below_marks_threshold(
         and s["performance_percentage"] < threshold_percentage
     ]
     out.sort(key=lambda s: s["performance_percentage"])
-    return out[:limit]
+    return out
 
 
 # --------------------------------------------------------------------------

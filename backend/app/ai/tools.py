@@ -172,15 +172,31 @@ def build_tools(
             return _denied("You have no assigned subjects.")
 
         used = threshold_value if threshold_value is not None else threshold
-        rows = A.low_attendance_students(db, codes, used, limit=min(limit, MAX_ROWS))
+        all_rows = A.low_attendance_students(db, codes, used)
+        shown = min(max(1, limit), MAX_ROWS)
+        rows = all_rows[:shown]
+
+        # The TOTAL is what a teacher acts on; the sample is only illustration.
+        # Reporting only `returned_count` previously led the model to state the
+        # sample size as the number of affected students.
+        distinct_students = len({r["student_id"] for r in all_rows})
         return {
+            "total_matching_records": len(all_rows),
+            "distinct_students_affected": distinct_students,
+            "showing_count": len(rows),
+            "truncated": len(all_rows) > len(rows),
             "threshold_applied": used,
             "subjects_searched": codes,
-            "returned_count": len(rows),
             "students": rows,
             "note": (
-                "Results are limited to the most affected students. Use the "
-                "Attendance Analytics page for the full paginated list and CSV export."
+                f"{len(all_rows)} student-subject record(s) across "
+                f"{distinct_students} distinct student(s) are below "
+                f"{used}%. The `students` list shows only the "
+                f"{len(rows)} worst. When stating how many students are "
+                f"affected, cite total_matching_records or "
+                f"distinct_students_affected -- NOT the length of this list. "
+                f"Point the teacher to the Attendance Analytics page for the "
+                f"full paginated list and CSV export."
             ),
         }
 
@@ -258,18 +274,25 @@ def build_tools(
     ) -> dict:
         if (msg := _authorize_subject(principal, subject_code)):
             return _denied(msg)
-        rows = A.students_below_marks_threshold(
+        all_rows = A.students_below_marks_threshold(
             db, subject_code.strip(), threshold_percentage,
-            limit=min(limit, MAX_ROWS),
         )
+        shown = min(max(1, limit), MAX_ROWS)
+        rows = all_rows[:shown]
         return {
             "subject_code": subject_code.strip(),
             "marks_threshold_percentage": threshold_percentage,
-            "returned_count": len(rows),
+            "total_matching_students": len(all_rows),
+            "showing_count": len(rows),
+            "truncated": len(all_rows) > len(rows),
             "students": rows,
             "note": (
-                "Scores are weighted means over assessments the student was "
-                "actually evaluated on. Unevaluated work is excluded, not zeroed."
+                f"{len(all_rows)} student(s) scored below "
+                f"{threshold_percentage}%; the {len(rows)} lowest are listed. "
+                f"Cite total_matching_students for the count, not the length "
+                f"of this list. Scores are weighted means over assessments the "
+                f"student was actually evaluated on -- unevaluated work is "
+                f"excluded, not zeroed."
             ),
         }
 
@@ -287,15 +310,27 @@ def build_tools(
             return _denied("You have no assigned subjects.")
 
         if overdue_only:
-            rows = A.overdue_assignments(db, codes, today=today, limit=MAX_ROWS)
+            all_rows = A.overdue_assignments(db, codes, today=today, limit=5000)
+            rows = all_rows[:MAX_ROWS]
+            distinct = len({r["student_id"] for r in all_rows})
             return {
                 "as_of_date": today.isoformat(),
                 "subjects_searched": codes,
-                "returned_count": len(rows),
+                "total_overdue_records": len(all_rows),
+                "distinct_students_affected": distinct,
+                "showing_count": len(rows),
+                "truncated": len(all_rows) > len(rows),
                 "overdue_records": rows,
                 "definition": (
                     "Overdue = nothing submitted AND the due date has passed. "
-                    "Work submitted but not yet marked is not overdue."
+                    "Work submitted but not yet marked is NOT overdue."
+                ),
+                "note": (
+                    f"{len(all_rows)} overdue record(s) across {distinct} "
+                    f"distinct student(s). The list shows the {len(rows)} "
+                    f"most overdue. Cite total_overdue_records or "
+                    f"distinct_students_affected for counts, never the "
+                    f"length of this list."
                 ),
             }
 
@@ -306,6 +341,8 @@ def build_tools(
             "as_of_date": today.isoformat(),
             "subjects_searched": codes,
             "assignment_count": len(out),
+            "showing_count": min(len(out), MAX_ROWS),
+            "truncated": len(out) > MAX_ROWS,
             "assignments": out[:MAX_ROWS],
         }
 
@@ -320,6 +357,8 @@ def build_tools(
             "student_id": sid,
             "as_of_date": today.isoformat(),
             "assignment_count": len(rows),
+            "showing_count": min(len(rows), MAX_ROWS),
+            "truncated": len(rows) > MAX_ROWS,
             "assignments": rows[:MAX_ROWS],
             "overdue_count": sum(1 for r in rows if r["is_overdue"]),
         }
@@ -351,6 +390,8 @@ def build_tools(
         return {
             "student_id": sid,
             "activity_count": len(rows),
+            "showing_count": min(len(rows), MAX_ROWS),
+            "truncated": len(rows) > MAX_ROWS,
             "activities": rows[:MAX_ROWS],
             "achievements_recorded": sum(1 for r in rows if r.get("achievement")),
         }
@@ -366,6 +407,10 @@ def build_tools(
         if not summary:
             return {"error": "not_found", "message": f"No record for {sid}."}
         # Keep the payload small: counts plus the attendance table.
+        summary["total_assessments"] = len(summary["assessments"])
+        summary["total_assignments"] = len(summary["assignments"])
+        summary["assessments_truncated"] = len(summary["assessments"]) > MAX_ROWS
+        summary["assignments_truncated"] = len(summary["assignments"]) > MAX_ROWS
         summary["assessments"] = summary["assessments"][:MAX_ROWS]
         summary["assignments"] = summary["assignments"][:MAX_ROWS]
         return summary
@@ -380,10 +425,10 @@ def build_tools(
             page=1, page_size=min(limit, MAX_ROWS),
         )
         return {
-            "matched_total": page.total,
-            "returned_count": len(page.items),
-            "students": page.items,
+            "total_matching_students": page.total,
+            "showing_count": len(page.items),
             "truncated": page.total > len(page.items),
+            "students": page.items,
         }
 
     # ---- bind ----------------------------------------------------------
