@@ -29,4 +29,13 @@ frontend/out/
 
 # Playwright MCP artifacts
 .playwright-mcp/
-*.png
+# Stray screenshots at the repo root, but keep documentation figures.
+/*.png
+
+# Report build artifacts
+report/node_modules/
+report/pages/
+report/package*.json
+
+# Vitest output
+frontend/.vitest/
