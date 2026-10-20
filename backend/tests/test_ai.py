@@ -7,6 +7,8 @@ with a teacher's own key at runtime.
 """
 from __future__ import annotations
 
+import inspect
+
 import asyncio
 from datetime import date
 
@@ -345,6 +347,53 @@ class TestSystemPrompt:
         assert "CB3202T" in prompt
         assert "must be refused" in prompt
 
+    def test_documents_the_guidance_added_for_tool_semantics(self):
+        """Each clause below exists because a probe of real tool output showed
+        the model could otherwise state something false. See TestPromptMatchesToolContract."""
+        flat = " ".join(SYSTEM_PROMPT.split())
+        for clause in [
+            # strict threshold: 30/40 == 75.0 is NOT below 75
+            "is strict",
+            # a real 0.0% with evaluated_count 1 is a genuine zero
+            "sat the assessment and scored zero",
+            # unknown students return authorization_denied, not not_found
+            "same error by design",
+            # empty result sets are not access problems
+            "An empty result is not a denial",
+            # the three-way status band
+            "At risk",
+        ]:
+            assert clause in flat, clause
+
+    def test_cites_only_real_tool_names(self):
+        """Every `tool_name` in the prompt must be a tool that actually exists."""
+        import re
+
+        from app.ai import tools as tools_module
+
+        src = inspect.getsource(tools_module)
+        real = set(re.findall(r'name="(\w+)"', src))
+        cited = set(re.findall(r"`(get_\w+|find_students)`", SYSTEM_PROMPT))
+        assert cited, "expected the prompt to name some tools"
+        assert not (cited - real), f"prompt cites nonexistent tools: {cited - real}"
+
+    def test_cites_only_real_result_fields(self):
+        """Field names the prompt tells the model to read must exist in the payloads."""
+        import re
+
+        from app.ai import tools as tools_module
+        from app.services import analytics as analytics_module
+
+        src = inspect.getsource(tools_module) + inspect.getsource(analytics_module)
+        cited = set(re.findall(
+            r"`(total_\w+|distinct_\w+|showing_count|truncated|\w+_truncated|"
+            r"evaluated_count|missing_count|absent_count)`",
+            SYSTEM_PROMPT,
+        ))
+        assert cited, "expected the prompt to name some result fields"
+        missing = {f for f in cited if f not in src}
+        assert not missing, f"prompt cites nonexistent fields: {missing}"
+
     def test_non_coordinator_is_told_they_lack_the_role(self, beta_principal):
         prompt = build_system_prompt(
             teacher_name=beta_principal.full_name,
@@ -488,6 +537,96 @@ class TestStreaming:
         # No individual student identifiers in the prompt.
         assert "STU0001" not in ctx
         assert "Student 1" not in ctx
+
+
+class TestPromptMatchesToolContract:
+    """Edge cases probed against real tool output.
+
+    Each test pins a behaviour the system prompt now describes. If a tool's
+    contract changes, these fail and the prompt must be corrected with it.
+    """
+
+    def test_exactly_at_threshold_is_not_below_it(self, alpha_tools):
+        """STU0002 is 30/40 == exactly 75%, and must NOT be reported as below."""
+        result = alpha_tools["get_low_attendance_students"].func(
+            subject_code="CB3202T",
+        )
+        listed = {r["student_id"] for r in result["students"]}
+        assert "STU0002" not in listed
+        assert result["total_matching_records"] == 1
+
+    def test_a_real_zero_is_distinguishable_from_missing_work(self, alpha_tools):
+        """0.0% with evaluated_count >= 1 is a genuine zero, not absent data."""
+        summary = alpha_tools["get_subject_performance_summary"].func(
+            subject_code="CB3202T",
+        )
+        by_id = {r["student_id"]: r for r in summary["students"]}
+        zero = by_id["STU0002"]
+        assert zero["performance_percentage"] == 0.0
+        assert zero["evaluated_count"] >= 1, "a real zero must have been evaluated"
+        # And the payload must carry the fields the prompt tells the model to read.
+        for field in ("evaluated_count", "missing_count", "absent_count"):
+            assert field in zero
+
+    def test_unknown_student_is_denied_not_reported_missing(self, alpha_tools):
+        """The system must not reveal whether an unknown ID exists."""
+        result = alpha_tools["get_student_attendance"].func(student_id="STU9999")
+        assert result["error"] == "authorization_denied"
+        assert "not_found" not in str(result)
+
+    def test_empty_results_are_not_denials(self, alpha_tools):
+        """Nobody matching is a no-op, not an access problem."""
+        result = alpha_tools["find_students"].func(search="NoSuchNameZZZ")
+        assert "error" not in result
+        assert result["total_matching_students"] == 0
+        assert result["students"] == []
+
+    def test_no_subject_teacher_is_denied_with_a_clear_reason(self, db_session):
+        from app.ai.tools import build_tools
+        from app.core.security import TeacherPrincipal
+
+        nobody = TeacherPrincipal(
+            teacher_id="TCH003", full_name="Gamma Teacher",
+            email="gamma@csbs-demo.invalid", department="CSBS",
+            designation="Lecturer", is_coordinator=False,
+            subject_codes=frozenset(),
+        )
+        tools = {t.name: t for t in build_tools(db_session, nobody, 75.0)}
+        for name in ("get_low_attendance_students", "find_students",
+                     "get_extracurricular_summary"):
+            result = tools[name].func()
+            assert result["error"] == "authorization_denied", name
+            assert "no assigned subjects" in result["message"].lower(), name
+
+    def test_already_at_target_needs_zero_classes(self, alpha_tools):
+        """0 means 'already there', which the prompt must not render as a task."""
+        result = alpha_tools["get_classes_needed_for_target"].func(
+            student_id="STU0001", subject_code="CB3202T", target=75.0,
+        )
+        assert result["consecutive_classes_required"] == 0
+        assert result["current_percentage"] > 75.0
+
+    def test_counts_are_available_without_measuring_the_list(self, alpha_tools):
+        """Every truncatable result exposes a total, so the model never counts rows."""
+        low = alpha_tools["get_low_attendance_students"].func()
+        for field in ("total_matching_records", "distinct_students_affected",
+                      "showing_count", "truncated"):
+            assert field in low, field
+
+        overdue = alpha_tools["get_assignment_submission_summary"].func(
+            overdue_only=True,
+        )
+        for field in ("total_overdue_records", "distinct_students_affected",
+                      "showing_count", "truncated"):
+            assert field in overdue, field
+
+    def test_overdue_excludes_submitted_but_unmarked_work(self, alpha_tools):
+        result = alpha_tools["get_assignment_submission_summary"].func(
+            overdue_only=True,
+        )
+        assert "NOT overdue" in result["definition"]
+        for row in result["overdue_records"]:
+            assert row["days_overdue"] > 0
 
 
 class TestPromptInjection:
